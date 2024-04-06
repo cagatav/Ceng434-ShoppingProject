@@ -1,7 +1,6 @@
 # CENG434 Project 
 
 # 190444038 - Enes Çağatay SÖZEN
->>>>>>> 17d2102531cf75e0bb6d3cb133802d83c30b274a
 
 This project was created using HTML, CSS, PHP, and MySQL. 
 
