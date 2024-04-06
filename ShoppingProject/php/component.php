@@ -1,6 +1,6 @@
 <?php
 
-function component($productname, $productdescription, $productprice, $productimg, $productid){
+function component($productname, $productdescription, $productprice, $productimg, $productid, $productseller){
     $element = "
     
         <div class=\"col-3 col-md-3 col-sm-6 my-3 my-md-3\">
@@ -12,13 +12,13 @@ function component($productname, $productdescription, $productprice, $productimg
                     <div class=\"card-body\">
                         <h5 class=\"card-title\">$productname</h5>
                         <p class=\"card-text\">
-                        <small class=\"card-description\">$productdescription</small>
+                        <small class=\"card-description\">$productseller</small>
                         </p>
                         <h5>
                             <span class=\"price\">$$productprice</span>
                         </h5>
 
-                        <button type=\"submit\" class=\"btn bg-info my-3 \" name=\"add\">Add to Cart <i class=\"fas fa-shopping-cart\"></i></button>
+                        <button type=\"submit\" class=\"btn bg-info my-3 text-light\" name=\"add\">Add to Cart <i class=\"fas fa-shopping-cart\"></i></button>
                         <input type='hidden' name='product_id' value='$productid'>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ function cartElement($productimg, $productname, $productprice, $productid, $prod
                             </div>
                             <div class=\"col-md-6\">
                                 <h5 class=\"pt-2\">$productname</h5>
-                                <small class=\"pt-2\">$productseller</small>
+                                <small class=\"pt-2\"><b> Seller: </b>$productseller</small>
                                 <h5 class=\"pt-2\">$$productprice</h5>
                                 <button type=\"submit\" class=\"btn btn-danger mx-2\" name=\"remove\">Remove</button>
                             </div>

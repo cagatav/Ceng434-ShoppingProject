@@ -15,7 +15,7 @@ if (isset($_POST['add'])){
         $item_array_id = array_column($_SESSION['cart'], "product_id");
 
         if(in_array($_POST['product_id'], $item_array_id)){
-            print_r('Product is already added in the cart..!');
+            print_r('Product is already added in the cart!');
         }else{
             print_r('Product is added in the cart!');
             $count = count($_SESSION['cart']);
@@ -54,6 +54,11 @@ if (isset($_POST['add'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
+    <script
+        src="https://app.livechatai.com/embed.js"
+        data-id="cluk9o3tp0001v667bvnwghdb"
+        async defer>
+    </script>
 </head>
 <body>
 
@@ -63,7 +68,7 @@ if (isset($_POST['add'])){
             <?php
                 $result = $database->getData();
                 while ($row = mysqli_fetch_assoc($result)){
-                    component($row['product_name'],$row['product_description'],$row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'],$row['product_description'],$row['product_price'], $row['product_image'], $row['id'], $row['product_seller']);
                 }
             ?>
         </div>
