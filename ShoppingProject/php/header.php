@@ -17,16 +17,16 @@
             <div class="navbar-nav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="mainmenu.php">Home</a>
+                    <a class="nav-link" href="Home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="shop.php">Shop</a>
+                    <a class="nav-link" href="Shop.php">Shop</a>
                 </li>
                 <li class="nav-item">   
-                    <a class="nav-link" href="account.php">Account</a>
+                    <a class="nav-link" href="Account.php">Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.php">About Us</a>
+                    <a class="nav-link" href="About.php">About Us</a>
                 </li>
             </ul>
                 <a href="cart.php" class="nav-item nav-link">
