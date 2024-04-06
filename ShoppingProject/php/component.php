@@ -1,36 +1,42 @@
 <?php
 
-function component($productname, $productdescription, $productprice, $productimg, $productid, $productseller){
+function componentShop($productName, $productDescription, $productPrice, $productImage, $productid, $productSeller) {
     $element = "
-    
-        <div class=\"col-3 col-md-3 col-sm-6 my-3 my-md-3\">
-            <form action=\"Home.php\" method=\"post\">
-                <div class=\"card shadow\">
-                    <div>
-                        <img src=\"$productimg\" alt=\"Image1\" class=\"img-thumbnail card-img-top\">
-                    </div>
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title\">$productname</h5>
-                        <p class=\"card-text\">
-                        <small class=\"card-description\">$productseller</small>
-                        </p>
-                        <h5>
-                            <span class=\"price\">$$productprice</span>
-                        </h5>
-
-                        <button type=\"submit\" class=\"btn bg-info my-3 text-light\" name=\"add\">Add to Cart <i class=\"fas fa-shopping-cart\"></i></button>
-                        <input type='hidden' name='product_id' value='$productid'>
-                    </div>
-                </div>
-            </form>
+    <div class='card'>
+        <img src='$productImage' class='card-img-top' alt='$productName'>
+        <div class='card-body'>
+            <h5 class='card-title'>$productName</h5>
+            <h6>$ $productPrice</h6>
+            <button class='btn btn-primary' name='add'>Add to Cart</button>
+            <input type='hidden' name='product_id' value='$productid'>
         </div>
+    </div>
+    ";
+    echo $element;
+}
+
+function componentHome($productName, $productDescription, $productPrice, $productImage, $productid, $productSeller) {
+    $element = "
+    <div class='col-md-4'>
+        <div class='card'>
+            <img src='$productImage' class='card-img-top' alt='$productName'>
+            <div class='card-body'>
+                <h5 class='card-title'>$productName</h5>
+                <h6>$ $productPrice</h6>
+                <form action='Home.php' method='post'>
+                    <button class='btn btn-primary' name='add'>Add to Cart</button>
+                    <input type='hidden' name='product_id' value='$productid'>
+                </form>
+            </div>
+        </div>
+    </div>
     ";
     echo $element;
 }
 
 function cartElement($productimg, $productname, $productprice, $productid, $productseller){
     $element = "
-    <form action=\"cart.php?action=remove&id=$productid\" method=\"post\" class=\"cart-items\">
+    <form action=\"cart.php?action=remove&product_id=$productid\" method=\"post\" class=\"cart-items\">
                     <div class=\"border rounded\">
                         <div class=\"row bg-white\">
                             <div class=\"col-md-3 pl-0\">

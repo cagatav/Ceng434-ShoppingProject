@@ -42,7 +42,7 @@ class MySQL
 
             // sql to create new table
             $sql = "CREATE TABLE IF NOT EXISTS $tablename
-                    (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                    (product_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                     product_name TEXT NOT NULL,
                     product_description TEXT NOT NULL,
                     product_price FLOAT,
@@ -61,18 +61,8 @@ class MySQL
 
     // get product from the database
     public function getData(){
-        $sql = "SELECT * FROM $this->tablename";
-
-        $result = mysqli_query($this->con, $sql);
-
-        if(mysqli_num_rows($result) > 0){
-            return $result;
-        }
+        $sql = "SELECT product_id, product_name, product_description, product_price, product_image, product_seller FROM $this->tablename";
+        $result = $this->con->query($sql); // Change $this->conn to $this->con
+        return $result;
     }
 }
-
-
-
-
-
-

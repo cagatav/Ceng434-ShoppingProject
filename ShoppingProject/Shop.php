@@ -1,17 +1,23 @@
 <?php
 session_start();
 
-require_once ('php/MySQL.php');
-require_once ('./php/component.php');
+require_once('php/MySQL.php');
+require_once('./php/component.php');
 
 $database = new MySQL("Productdb", "Producttable");
 
 function displayProducts($database) {
     $result = $database->getData();
     while ($row = mysqli_fetch_assoc($result)){
-        component($row['product_name'], $row['product_description'], $row['product_price'], $row['product_image'], $row['id'], $row['product_seller']);
+        // Wrap each product with anchor tag linking to product.php with product_id parameter
+        echo "<div class='col-md-4 mb-3'>";
+        echo "<a href='ProductDetails.php?product_id={$row['product_id']}'>";
+        componentShop($row['product_name'], $row['product_description'], $row['product_price'], $row['product_image'], $row['product_id'], $row['product_seller']);
+        echo "</a>";
+        echo "</div>";
     }
 }
+
 if (isset($_POST['add'])){
 
     if(isset($_SESSION['cart'])){
@@ -53,14 +59,10 @@ if (isset($_POST['add'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
     <link rel="stylesheet" href="style.css">
-    <script
-        src="https://app.livechatai.com/embed.js"
-        data-id="cluk9o3tp0001v667bvnwghdb"
-        async defer>
-    </script>
+    <script src="https://app.livechatai.com/embed.js" data-id="cluk9o3tp0001v667bvnwghdb" async defer></script>
 </head>
 <body>
-    <?php require_once ("php/header.php"); ?>
+    <?php require_once("php/header.php"); ?>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-3">
@@ -100,7 +102,7 @@ if (isset($_POST['add'])){
                     <?php displayProducts($database); ?>
                 </div>
             </div>
-
         </div>
     </div>
-*
+</body>
+</html>

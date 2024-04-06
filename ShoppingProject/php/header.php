@@ -36,9 +36,9 @@
 
                         if (isset($_SESSION['cart'])){
                             $count = count($_SESSION['cart']);
-                            echo "<span id=\"cart_count\" class=\"text-warning bg-light\">$count</span>";
+                            echo "<span product_id=\"cart_count\" class=\"text-warning bg-light\">$count</span>";
                         }else{
-                            echo "<span id=\"cart_count\" class=\"text-warning bg-light\">0</span>";
+                            echo "<span product_id=\"cart_count\" class=\"text-warning bg-light\">0</span>";
                         }
                         ?>
                     </h5>
