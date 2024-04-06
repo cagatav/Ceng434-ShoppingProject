@@ -1,15 +1,14 @@
 <?php
 class MySQL
 {
-        public $servername;
-        public $username;
-        public $password;
-        public $dbname;
-        public $tablename;
-        public $con;
+    public $servername;
+    public $username;
+    public $password;
+    public $dbname;
+    public $tablename;
+    public $con;
 
-
-        // class constructor
+    // class constructor
     public function __construct(
         $dbname = "Newdb",
         $tablename = "Productdb",
@@ -18,13 +17,13 @@ class MySQL
         $password = ""
     )
     {
-      $this->dbname = $dbname;
-      $this->tablename = $tablename;
-      $this->servername = $servername;
-      $this->username = $username;
-      $this->password = $password;
+        $this->dbname = $dbname;
+        $this->tablename = $tablename;
+        $this->servername = $servername;
+        $this->username = $username;
+        $this->password = $password;
 
-      // create connection
+        // create connection
         $this->con = mysqli_connect($servername, $username, $password);
 
         // Check connection
@@ -47,7 +46,7 @@ class MySQL
                     product_description TEXT NOT NULL,
                     product_price FLOAT,
                     product_image VARCHAR (100),
-                    product_seller	VARCHAR (25) NOT NULL
+                    product_seller VARCHAR (25) NOT NULL
                     );";
 
             if (!mysqli_query($this->con, $sql)){
@@ -59,10 +58,15 @@ class MySQL
         }
     }
 
+    // Method to execute SQL queries
+    public function executeQuery($sql) {
+        return $this->con->query($sql);
+    }
+
     // get product from the database
     public function getData(){
         $sql = "SELECT product_id, product_name, product_description, product_price, product_image, product_seller FROM $this->tablename";
-        $result = $this->con->query($sql); // Change $this->conn to $this->con
+        $result = $this->con->query($sql);
         return $result;
     }
 }

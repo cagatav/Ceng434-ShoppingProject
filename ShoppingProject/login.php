@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row['password'])) {
                 // Set session variables
-                $_SESSION['user_id'] = $row['user_id'];
+                $_SESSION['user_id'] = $row['id'];
                 $_SESSION['user_name'] = $row['name'];
                 $_SESSION['user_email'] = $row['email'];
                 

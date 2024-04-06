@@ -1,6 +1,43 @@
 <?php
 session_start();
 
+// Function to create database and table if they don't exist
+function createDatabaseAndTable($host, $username, $password, $dbName, $tableName) {
+    // Connect to MySQL server
+    $conn = new mysqli($host, $username, $password);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Create database if it doesn't exist
+    $sqlCreateDB = "CREATE DATABASE IF NOT EXISTS $dbName";
+    if ($conn->query($sqlCreateDB) === FALSE) {
+        echo "Error creating database: " . $conn->error;
+    }
+
+    // Select the database
+    $conn->select_db($dbName);
+
+    // Create table if it doesn't exist
+    $sqlCreateTable = "CREATE TABLE IF NOT EXISTS $tableName (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(50) NOT NULL,
+        email VARCHAR(50) NOT NULL,
+        password VARCHAR(255) NOT NULL
+    )";
+    if ($conn->query($sqlCreateTable) === FALSE) {
+        echo "Error creating table: " . $conn->error;
+    }
+
+    // Close connection
+    $conn->close();
+}
+
+// Create database and table if they don't exist
+createDatabaseAndTable("localhost", "root", "", "YourDBName", "users");
+
 // If user is already logged in, redirect to account page
 if (isset($_SESSION['user_id'])) {
     header("Location: account.php");
