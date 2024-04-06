@@ -18,9 +18,47 @@ To run it, follow these steps:
 
 ```sql
 INSERT INTO producttable (product_name, product_description, product_price, product_image, product_seller)
-VALUES ('Dell - Inspiron 16.0" 2-in-1 Touch Laptop -13th Gen Intel Evo i7 - 16GB Memory - 1TB SSD - Platinum Silver
-','Embark on your adventure with the Inspiron 16 2-in-1 Laptop’s elevated audio in any mode, a larger-than-life screen and an upscale design. ',799.99,'./upload/product1.jpg', 'Dell'),
-       ('HP - 15.6" Touch-Screen Laptop - Intel Core i3 - 8GB Memory - 256GB SSD - Natural Silver','Do more from anywhere. All-day long. Designed to keep you productive and entertained from anywhere, the HP 15.6-inch Laptop PC combines long lasting battery life with a thin and portable, microedge bezel design. ',329.99,'./upload/product2.jpg', 'HP'),
-       ('HP - Envy 2-in-1 16" Wide Ultra XGA Touch-Screen Laptop - Intel Core Ultra 7 - 16GB Memory - 1TB SSD - Glacier Silver','Power your every passion. The HP ENVY Laptop is designed to help you power your passions with built-in AI technology that delivers hard-hitting processing power to help you do more faster. This innovative tech comes in a thin and light, versatile 2-in-1 design so you can use it as a tablet or a laptop letting you work however you want, wherever you want. ',799.99,'./upload/product3.jpg', 'HP'),
-       ('MacBook Air 13.6" Laptop - Apple M2 chip - 8GB Memory - 256GB SSD - Midnight','Supercharged by the next-generation M2 chip, the redesigned MacBook Air combines incredible performance and up to 18 hours of battery life into its strikingly thin aluminum enclosure.',999.00,'./upload/product4.jpg', 'Apple')
-```
+VALUES 
+('GIGABYTE 32" 144Hz Curved Gaming Monitör',
+'DÜNYANIN İLK 31.5" UHD 144HZ KAVİSLİ OYUN MONİTÖRÜ
+Yüksek kavis ve hızlı yenileme hızı ile GIGABYTE oyun monitörleri, nihai derinlemesine sürükleyici oyun deneyimi için yepyeni bir deneyim getiriyor. Kullanıcılar, savurganlığa ihtiyaç duymadan gerçekten üst düzey performansın keyfini çıkarabilir.
+SuperSpeed ​​VA teknolojisi, şimdiye kadarki en akıcı oyun deneyimi için yanıt süresini 1ms MPRT/2ms GTG-ye düşürür!
+Size ayrıntılı görüntü kalitesi ve akıcı oyun deneyimi sunan yüksek çözünürlük ve hızlı yenileme hızı!
+Fantastik renkli ekran ve %93 DCI-P3 süper geniş renk gamı.
+En yeni HDMI 2.1, yeni nesil konsolları destekleyen 4K@144Hz-lik daha yüksek bir bant genişliği sağlayarak oyun deneyiminizi geliştirebilir ve maceradan nişancılık oyunlarına kadar çeşitli oyunlarda rekabet avantajı sunar.
+KVM özelliği, tek bir klavye, video ve fare seti aracılığıyla birden fazla cihazı kontrol etmenizi sağlar. Özel KVM düğmemizle, anahtarlama cihazlarının daha kolay olamayacağını göreceksiniz! Bir çırpıda gibi hızlı!',
+27100,
+'./upload/pro1.jpg',
+'GIGABYTE'),
+
+('ASUS 32" ROG Swift 160Hz FastIPS Gaming Monitör',
+'Profesyonel oyuncular için tasarlanan 160Hz yenileme hızına sahip 32 inç 4K (3840 x 2160) mini LED oyuncu monitörü
+ASUS Fast IPS teknolojisi, yüksek kare oranlarıyla akıcı oyun görüntülerini 1ms tepki süresi (griden griye) ile sunar
+576 bağımsız LED bölgesinden oluşan Tam Yerel Işık Kısma (FALD) arka aydınlatma sistemi ve 1000 nit parlaklıkla DisplayHDR 1000 sertifikası
+HDMI® 2.1, Playstation® 5 ve Xbox Series X konsollarda kroma alt örnekleme (4:4:4) olmadan gerçek 4K 120Hz oyun deneyimi sunar
+HDMI® 2.1, USB merkezi, monitörün üst kısmında bulunan bir adet tripod soketi ve Display Stream Compression (DSC) teknolojisiyle DisplayPort™ 2.1’in de dahil olduğu kapsamlı bağlantı seçenekleri
+DCI-P3 %96 geniş renk gamıyla Quantum-dot ekran, gerçekçi renkler ve daha pürüzsüz renk geçişleri sağlar
+AMD FreeSync Premium Pro akıcı, düşük gecikmeli ve yırtılmayan görüntüler sunar',
+80867,
+'./upload/pro2.jpg',
+'ASUS'),
+
+('ASUS TUF GAMING 27" Premium Gaming Monitör',
+'TUF Gaming VG279Q1A, ultra yüksek 165Hz yenileme hızına sahip 27 inç boyutunda bir Full HD (1920 x 1080) IPS ekran. Oyuncular ve etkileyici oyun deneyimi arayan herkes için tasarlanan bu monitör iddialı özelliklerle donatıldı. Elbette hepsi bunlarla sınırlı değil... Özel ELMB teknolojisi; 1 ms MPRT tepki süresi ve Adaptive-Sync (FreeSync™ Premium) teknolojisiyle hiçbir yırtılma veya takılma olmadan inanılmaz akıcı bir oyun deneyimi sunuyor.',
+8595,
+'./upload/pro3.jpg',
+'ASUS'),
+('ViewSonic 24" FastIPS FHD Gaming Monitör',
+'Ne sıklıkta veya ne zaman oynarsanız oynayın, Omni VX2428 ile her zaman kazanırsınız. AMD FreeSync™ Premium, VESA Adaptive Sync ve VESA clearMR-den oluşan üçlü sertifikasıyla, bozulma olmadan oyun oynamanın ve gelişmiş netliğin keyfini çıkarmanızı sağlar. Keskin çerçeveler ve olağanüstü renk performansı, hızlı bir IPS paneli tarafından sağlanırken, VX2428-in yüksek 180Hz yenileme hızı, pürüzsüz görselleri ve minimum giriş gecikmesini destekler. Bu kadar iyi olmayacağını düşünebilirsiniz, ama öyle. Sadece işi yapmakla kalmayacak - yorucu oyun oturumları, video ve fotoğraf düzenleme veya ofis işleriniz olsun - şık, güzel tasarlanmış bir monitör üzerinde çalışacaksınız.',
+5116,
+'./upload/pro4.jpg',
+'ViewSonic')
+
+```        
+
+
+('NAME',
+'DESCRIPTION',
+100.00,
+'./upload/product1.jpg',
+'SELLER'),
