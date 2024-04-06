@@ -12,6 +12,35 @@ function displayProducts($database) {
         component($row['product_name'], $row['product_description'], $row['product_price'], $row['product_image'], $row['id'], $row['product_seller']);
     }
 }
+if (isset($_POST['add'])){
+
+    if(isset($_SESSION['cart'])){
+
+        $item_array_id = array_column($_SESSION['cart'], "product_id");
+
+        if(in_array($_POST['product_id'], $item_array_id)){
+            print_r('Product is already added in the cart!');
+        }else{
+            print_r('Product is added in the cart!');
+            $count = count($_SESSION['cart']);
+            $item_array = array(
+                'product_id' => $_POST['product_id']
+            );
+
+            $_SESSION['cart'][$count] = $item_array;
+        }
+
+    }else{
+
+        $item_array = array(
+                'product_id' => $_POST['product_id']
+        );
+
+        // Create new session variable
+        $_SESSION['cart'][0] = $item_array;
+        print_r($_SESSION['cart']);
+    }
+}
 
 ?>
 
