@@ -1,6 +1,6 @@
 <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-        <a href="mainmenu.php" class="navbar-brand">
+        <a href="Home.php" class="navbar-brand">
             <img src="logo/shopingtime.png" class="ml-3" width="300">
         </a>
         <button class="navbar-toggler"

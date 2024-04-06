@@ -4,7 +4,7 @@ function component($productname, $productdescription, $productprice, $productimg
     $element = "
     
         <div class=\"col-3 col-md-3 col-sm-6 my-3 my-md-3\">
-            <form action=\"mainmenu.php\" method=\"post\">
+            <form action=\"Home.php\" method=\"post\">
                 <div class=\"card shadow\">
                     <div>
                         <img src=\"$productimg\" alt=\"Image1\" class=\"img-fluid card-img-top\">
