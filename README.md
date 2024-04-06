@@ -45,13 +45,13 @@ AMD FreeSync Premium Pro akıcı, düşük gecikmeli ve yırtılmayan görüntü
 
 ,('ASUS TUF GAMING 27" 165Hz Premium Gaming Monitör',
 'TUF Gaming VG279Q1A, ultra yüksek 165Hz yenileme hızına sahip 27 inç boyutunda bir Full HD (1920 x 1080) IPS ekran. Oyuncular ve etkileyici oyun deneyimi arayan herkes için tasarlanan bu monitör iddialı özelliklerle donatıldı. Elbette hepsi bunlarla sınırlı değil... Özel ELMB teknolojisi; 1 ms MPRT tepki süresi ve Adaptive-Sync (FreeSync™ Premium) teknolojisiyle hiçbir yırtılma veya takılma olmadan inanılmaz akıcı bir oyun deneyimi sunuyor.',
-8595,
+159.28,
 './upload/pro3.jpg',
 'ASUS')
 
 ,('ViewSonic 24" 180Hz FreeSync Fast IPS FHD Gaming Monitör',
 'Ne sıklıkta veya ne zaman oynarsanız oynayın, Omni VX2428 ile her zaman kazanırsınız. AMD FreeSync™ Premium, VESA Adaptive Sync ve VESA clearMR-den oluşan üçlü sertifikasıyla, bozulma olmadan oyun oynamanın ve gelişmiş netliğin keyfini çıkarmanızı sağlar. Keskin çerçeveler ve olağanüstü renk performansı, hızlı bir IPS paneli tarafından sağlanırken, VX2428-in yüksek 180Hz yenileme hızı, pürüzsüz görselleri ve minimum giriş gecikmesini destekler. Bu kadar iyi olmayacağını düşünebilirsiniz, ama öyle. Sadece işi yapmakla kalmayacak - yorucu oyun oturumları, video ve fotoğraf düzenleme veya ofis işleriniz olsun - şık, güzel tasarlanmış bir monitör üzerinde çalışacaksınız.',
-5116,
+109.99,
 './upload/pro4.jpg',
 'ViewSonic')
 
@@ -72,7 +72,7 @@ Pil: 4 cell, 99.99Whr
 Güç Adaptörü: 240W
 Boyutlar: 355.8 x 259.7 x 19.95 mm
 Ağırlık: 1.99 kg',
-173242,
+949.59,
 './upload/pro4.jpg',
 'MSI')
 
@@ -84,7 +84,7 @@ En iyi Intel Core işlemciler ve tamamen işlevsel USB-C bağlantı noktaları.
 Intel® WiFi 6E ile hızlı bağlantı ve hızlı pil şarjı.
 Geniş renk yelpazesi ve Dolby Vision® ile çarpıcı 2,5K ekran,
 Kolayca taşınabilir ve dayanıklıdır.',
-47999,
+949.99,
 './upload/pro5.jpg',
 'Lenovo')
 
@@ -92,7 +92,7 @@ Kolayca taşınabilir ve dayanıklıdır.',
 'Yepyeni AORUS 7, güçlü performansı ve mobiliteyi, NVIDIA DLSS 3, ultra verimli Ada Lovelace kemeri ve desteklenen güçlü 12. Max-Q Technologies, herhangi bir AAA oyununu sorunsuz çalıştırmanın gücünü hissedin. Yüksek ekran-gövde oranına sahip 360 Hz oyun paneli, oyuncuların bir sinema salonu veya birinci sınıf e-spor odası gibi pürüzsüz, yüksek kaliteli görsellere kapılmalarını sağlar.
 Dünyanın İlk Dört Taraflı Süper İnce Çerçeveli Oyun Dizüstü Bilgisayarı
 AORUS 7, son derece pürüzsüz bir görsel şölen ve muhteşem bir geniş renk gamı ile kusursuz daldırma için dört taraflı süper ince çerçeveli ekrana sahiptir. Yüksek yenileme hızı, herhangi bir gölgelenmeyi ortadan kaldırarak oyuncuların savaş alanına hükmederken muhteşem görsellerin keyfini çıkarmasına olanak tanır.',
-37799,
+959.99,
 './upload/pro6.jpg',
 'GIGABYTE')
 
@@ -100,7 +100,7 @@ AORUS 7, son derece pürüzsüz bir görsel şölen ve muhteşem bir geniş renk
 'Yeni Razer Blade 17 her zamankinden daha güçlü, tasarımı ve geliştirilmiş termal özellikleriyle kompakt olmasına rağmen Blade 17, Profesyonelleri en yeni NVIDIA ve Intel işlemcilerle güçlendiriyor. Hareket halindeyken performans gerektiren AAA oyunlarına dayanabilen, oyun sırasında canlı video akışı yapabilen veya başyapıtlar yaratabilen Blade 17, güçlü bir mobil masaüstü bilgisayardır.
 Uygulamaları yüklerken, oyunları çalıştırırken ve diğer günlük bilgisayar görevlerini gerçekleştirirken daha hızlı, daha sorunsuz bir deneyimin keyfini çıkarırken, DDR4-e kıyasla 1600 MHz-lik artışla hızı hissedin.
 Razer Blade 17-nin üretebileceği yeni keşfedilen gücün tamamı, buna uygun bir termal performans olmadan anlamsız olacaktır. Daha fazla kanatçık, fan ve daha büyük sıvı kapasitesiyle güncellenen sistem, termal eşiği en üst düzeye çıkarmak ve dizüstü bilgisayardaki FPS-nin her onsunu sıkıştırmak için nanopartikül termal engelleyicilerini ve sunucu sınıfı bileşenlerini en üst düzeye çıkarır. Bu sistem yalnızca dizüstü bilgisayarın maksimum düzeyde performans göstermesini sağlamakla kalmıyor, aynı zamanda Razer Blade dizüstü bilgisayarların başka hiçbir yerde bulunamayacak kadar ince bir form faktörünü koruyabilmesini de sağlıyor.',
-79900,
+1949.99,
 './upload/pro7.jpg',
 'Razer')
 ```        

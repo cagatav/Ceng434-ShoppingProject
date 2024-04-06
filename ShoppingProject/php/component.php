@@ -17,7 +17,7 @@ function componentShop($productName, $productDescription, $productPrice, $produc
 
 function componentHome($productName, $productDescription, $productPrice, $productImage, $productid, $productSeller) {
     $element = "
-    <div class='col-md-4'>
+    <div class='col-md-4 my-2'>
         <div class='card'>
             <img src='$productImage' class='card-img-top' alt='$productName'>
             <div class='card-body'>
