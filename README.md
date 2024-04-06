@@ -19,13 +19,46 @@ To run it, follow these steps:
 ```sql
 INSERT INTO producttable (product_name, product_description, product_price, product_image, product_seller)
 VALUES 
-        ('Dell - Inspiron 16.0" 2-in-1 Touch Laptop -13th Gen Intel Evo i7 - 16GB Memory - 1TB SSD - Platinum Silver
-        ','Embark on your adventure with the Inspiron 16 2-in-1 Laptop’s elevated audio in any mode, a larger-than-life screen and an upscale design. ',799.99,'./upload/product1.jpg', 'Dell'),
-       ('HP - 15.6" Touch-Screen Laptop - Intel Core i3 - 8GB Memory - 256GB SSD - Natural Silver','Do more from anywhere. All-day long. Designed to keep you productive and entertained from anywhere, the HP 15.6-inch Laptop PC combines long lasting battery life with a thin and portable, microedge bezel design. ',329.99,'./upload/product2.jpg', 'HP'),
-       ('MacBook Air 13.6" Laptop - Apple M2 chip - 8GB Memory - 256GB SSD - Midnight','Supercharged by the next-generation M2 chip, the redesigned MacBook Air combines incredible performance and up to 18 hours of battery life into its strikingly thin aluminum enclosure.',999.00,'./upload/product4.jpg', 'Apple'),
-       ('MacBook Air 13.3" Laptop - Apple M1 chip - 8GB Memory - 256GB SSD - Gold - Gold','Apple’s thinnest and lightest notebook gets supercharged with the Apple M1 chip. Tackle your projects with the blazing-fast 8-core CPU. Take graphics-intensive apps and games to the next level with the 7-core GPU. And accelerate machine learning tasks with the 16-core Neural Engine. All with a silent, fanless design and the longest battery life ever — up to 18 hours.¹ MacBook Air. Still perfectly portable. Just a lot more powerful. ',699.99,'./upload/product5.jpg', 'Apple'),
-       ('Apple - iPhone 14 Pro Max 128GB - Gold (Verizon)','iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with groundbreaking safety features.',999.99,'./upload/product6.jpg', 'Apple'),
-       ('Samsung - Galaxy S24 Ultra 512GB - Titanium Black','The new era of mobile AI is here. Do more with an epic Galaxy. Wondering where the cool museum that your favorite influencer visited is located? Simply Circle to Search with Google and start planning your own trip to the Louvre. Then get ready to experience local flavors by calling ahead with Live Translate to make a reservation in French, even if all you know is “Bonjour.” Capture every detail of your candlelight meal with impressive Nightography and zoom in to see the live violinist playing across the room. Once you’re back in your hotel, elevate your pics from good to great right on your Galaxy S24 Ultra. You can even use your built in S Pen to add fun doodles before posting. Unleash new ways to create, connect and more with Galaxy S24 Ultra. Galaxy AI is here.',1319.99,'./upload/product7.jpg', 'Samsung'),
-       ("Samsung - Galaxy Z Flip5 256GB - Graphite","Meet the phone that’s tiny, trendy and totally flex worthy. With a full cover screen, you can reply to texts, preview photos and access even more widgets than before with your Galaxy Z Flip5 folded shut. And with Flex Mode, you can capture hands free selfies and videos from any angle. A compact, durable design makes this pocket sized phone perfect for life on the go. Plus, personalize your phone from the outside in with a customizable cover screen and four stylish covers to show off your style. Flex a phone as bold as you are with Galaxy Z Flip5.",899.99,'./upload/product8.jpg', 'Samsung'),
-       ("Google - Pixel 7 Pro 512GB - Snow","Introducing Pixel 7 Pro, Google’s best-of-everything phone. Powered by Google Tensor G2, it’s fast and secure, with an immersive display and amazing battery life. The best Pixel camera yet includes a telephoto lens and pro-level features like Macro Focus. And with the certified Titan M2 security chip and a built-in VPN, Pixel helps protect your personal data.",1099.00,'./upload/product3.jpg', 'Google')
-```
+('GIGABYTE 32" 144Hz Curved Gaming Monitör',
+'DÜNYANIN İLK 31.5" UHD 144HZ KAVİSLİ OYUN MONİTÖRÜ
+Yüksek kavis ve hızlı yenileme hızı ile GIGABYTE oyun monitörleri, nihai derinlemesine sürükleyici oyun deneyimi için yepyeni bir deneyim getiriyor. Kullanıcılar, savurganlığa ihtiyaç duymadan gerçekten üst düzey performansın keyfini çıkarabilir.
+SuperSpeed ​​VA teknolojisi, şimdiye kadarki en akıcı oyun deneyimi için yanıt süresini 1ms MPRT/2ms GTG-ye düşürür!
+Size ayrıntılı görüntü kalitesi ve akıcı oyun deneyimi sunan yüksek çözünürlük ve hızlı yenileme hızı!
+Fantastik renkli ekran ve %93 DCI-P3 süper geniş renk gamı.
+En yeni HDMI 2.1, yeni nesil konsolları destekleyen 4K@144Hz-lik daha yüksek bir bant genişliği sağlayarak oyun deneyiminizi geliştirebilir ve maceradan nişancılık oyunlarına kadar çeşitli oyunlarda rekabet avantajı sunar.
+KVM özelliği, tek bir klavye, video ve fare seti aracılığıyla birden fazla cihazı kontrol etmenizi sağlar. Özel KVM düğmemizle, anahtarlama cihazlarının daha kolay olamayacağını göreceksiniz! Bir çırpıda gibi hızlı!',
+27100,
+'./upload/pro1.jpg',
+'GIGABYTE'),
+
+('ASUS 32" ROG Swift 160Hz FastIPS Gaming Monitör',
+'Profesyonel oyuncular için tasarlanan 160Hz yenileme hızına sahip 32 inç 4K (3840 x 2160) mini LED oyuncu monitörü
+ASUS Fast IPS teknolojisi, yüksek kare oranlarıyla akıcı oyun görüntülerini 1ms tepki süresi (griden griye) ile sunar
+576 bağımsız LED bölgesinden oluşan Tam Yerel Işık Kısma (FALD) arka aydınlatma sistemi ve 1000 nit parlaklıkla DisplayHDR 1000 sertifikası
+HDMI® 2.1, Playstation® 5 ve Xbox Series X konsollarda kroma alt örnekleme (4:4:4) olmadan gerçek 4K 120Hz oyun deneyimi sunar
+HDMI® 2.1, USB merkezi, monitörün üst kısmında bulunan bir adet tripod soketi ve Display Stream Compression (DSC) teknolojisiyle DisplayPort™ 2.1’in de dahil olduğu kapsamlı bağlantı seçenekleri
+DCI-P3 %96 geniş renk gamıyla Quantum-dot ekran, gerçekçi renkler ve daha pürüzsüz renk geçişleri sağlar
+AMD FreeSync Premium Pro akıcı, düşük gecikmeli ve yırtılmayan görüntüler sunar',
+80867,
+'./upload/pro2.jpg',
+'ASUS'),
+
+('ASUS TUF GAMING 27" Premium Gaming Monitör',
+'TUF Gaming VG279Q1A, ultra yüksek 165Hz yenileme hızına sahip 27 inç boyutunda bir Full HD (1920 x 1080) IPS ekran. Oyuncular ve etkileyici oyun deneyimi arayan herkes için tasarlanan bu monitör iddialı özelliklerle donatıldı. Elbette hepsi bunlarla sınırlı değil... Özel ELMB teknolojisi; 1 ms MPRT tepki süresi ve Adaptive-Sync (FreeSync™ Premium) teknolojisiyle hiçbir yırtılma veya takılma olmadan inanılmaz akıcı bir oyun deneyimi sunuyor.',
+8595,
+'./upload/pro3.jpg',
+'ASUS'),
+('ViewSonic 24" FastIPS FHD Gaming Monitör',
+'Ne sıklıkta veya ne zaman oynarsanız oynayın, Omni VX2428 ile her zaman kazanırsınız. AMD FreeSync™ Premium, VESA Adaptive Sync ve VESA clearMR-den oluşan üçlü sertifikasıyla, bozulma olmadan oyun oynamanın ve gelişmiş netliğin keyfini çıkarmanızı sağlar. Keskin çerçeveler ve olağanüstü renk performansı, hızlı bir IPS paneli tarafından sağlanırken, VX2428-in yüksek 180Hz yenileme hızı, pürüzsüz görselleri ve minimum giriş gecikmesini destekler. Bu kadar iyi olmayacağını düşünebilirsiniz, ama öyle. Sadece işi yapmakla kalmayacak - yorucu oyun oturumları, video ve fotoğraf düzenleme veya ofis işleriniz olsun - şık, güzel tasarlanmış bir monitör üzerinde çalışacaksınız.',
+5116,
+'./upload/pro4.jpg',
+'ViewSonic')
+
+```        
+
+
+('NAME',
+'DESCRIPTION',
+100.00,
+'./upload/product1.jpg',
+'SELLER'),
