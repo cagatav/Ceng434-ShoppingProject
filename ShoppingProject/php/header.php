@@ -26,7 +26,7 @@
                     <a class="nav-link" href="account.php">Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.php">About US</a>
+                    <a class="nav-link" href="about.php">About Us</a>
                 </li>
             </ul>
                 <a href="cart.php" class="nav-item nav-link">
