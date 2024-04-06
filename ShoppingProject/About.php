@@ -26,16 +26,16 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link" href="Home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="shop.php">Shop</a>
+                    <a class="nav-link" href="Shop.php">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="account.php">Account</a>
+                    <a class="nav-link" href="Account.php">Account</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="about.php">About Us</a>
+                    <a class="nav-link" href="About.php">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a href="cart.php" class="nav-link">
