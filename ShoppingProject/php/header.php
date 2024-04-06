@@ -1,4 +1,3 @@
-
 <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-info">
         <a href="mainmenu.php" class="navbar-brand">
@@ -14,10 +13,22 @@
         >
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="mr-auto"></div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.php">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="account.php">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.php">About US</a>
+                </li>
+            </ul>
                 <a href="cart.php" class="nav-item nav-link">
                     <h5 class="px-5 cart">
                         <i class="fas fa-shopping-cart"></i> Cart
@@ -32,14 +43,8 @@
                         ?>
                     </h5>
                 </a>
+            <div>
             </div>
         </div>
-
     </nav>
 </header>
-
-
-
-
-
-
