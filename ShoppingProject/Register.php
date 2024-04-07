@@ -40,7 +40,7 @@ createDatabaseAndTable("localhost", "root", "", "YourDBName", "users");
 
 // If user is already logged in, redirect to account page
 if (isset($_SESSION['user_id'])) {
-    header("Location: account.php");
+    header("Location: Account.php");
     exit;
 }
 

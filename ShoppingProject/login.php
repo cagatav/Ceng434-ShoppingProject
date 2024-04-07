@@ -3,7 +3,7 @@ session_start();
 
 // If user is already logged in, redirect to account page
 if (isset($_SESSION['user_id'])) {
-    header("Location: account.php");
+    header("Location: Account.php");
     exit;
 }
 
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['user_email'] = $row['email'];
                 
                 // Redirect to account page
-                header("Location: account.php");
+                header("Location: Account.php");
                 exit;
             } else {
                 $error = "Invalid email or password.";

@@ -86,6 +86,14 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
                     </div>
                 </div>
             </div>
+            <!-- Continue to Checkout Button -->
+            <div class="mt-3">
+                <?php if(isset($_SESSION['user_id'])): ?>
+                    <a href="payment.php" class="btn btn-primary btn-block">Continue to Checkout</a>
+                <?php else: ?>
+                    <a href="login.php" class="btn btn-primary btn-block">Login to Proceed</a>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
     
