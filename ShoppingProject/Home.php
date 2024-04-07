@@ -43,7 +43,7 @@ if (isset($_POST['add'])){
         src="https://app.livechatai.com/embed.js"
         data-id="cluk9o3tp0001v667bvnwghdb"
         async defer>
-        
+
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -67,10 +67,10 @@ if (isset($_POST['add'])){
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="upload/banner1.jpg" class="d-block mx-auto" style="max-width: 800px; height: auto;" alt="...">
+                <img src="upload/banner1.jpg" class="d-block mx-auto" style="max-width: 900px; height: auto;" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner2.jpeg" class="d-block mx-auto" style="max-width: 800px; height: auto;" alt="...">
+                <img src="upload/banner2.jpeg" class="d-block mx-auto" style="max-width: 900px; height: auto;" alt="...">
             </div>
             <!-- BANNER RESİMLERİNİ BURAYA EKLEYEBİLİRSİN -->
         </div>
