@@ -63,14 +63,22 @@ if (isset($_POST['add'])){
         <ol class="carousel-indicators">
             <li data-target="#kayarbanner" data-slide-to="0" class="active"></li>
             <li data-target="#kayarbanner" data-slide-to="1"></li>
+            <li data-target="#kayarbanner" data-slide-to="2"></li>
+            <li data-target="#kayarbanner" data-slide-to="3"></li>
             <!-- EKLEDİĞİN BANNER SAYISI KADAR KOD EKLE VE 2-3-4 DİYE İNDEXLEME DEVAM ET -->
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="upload/banner1.jpg" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
+                <img src="upload/banner-welcome.png" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner2.jpeg" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
+                <img src="upload/banner-shopnow.png" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="upload/banner-livechatai.png" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="upload/banner-team.png" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
             </div>
             <!-- BANNER RESİMLERİNİ BURAYA EKLEYEBİLİRSİN -->
         </div>
