@@ -1,13 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+</body>
+</html>
 <?php
-
 function componentShop($productName, $productDescription, $productPrice, $productImage, $productid, $productSeller) {
     $element = "
     <div class='card'>
         <img src='$productImage' class='card-img-top' alt='$productName'>
         <div class='card-body'>
-            <h5 class='card-title'>$productName</h5>
-            <h6>$ $productPrice</h6>
-            <button class='btn btn-primary' name='add'>Add to Cart</button>
+            <p class= 'text-dark'>$productSeller</p>
+            <h6 class='card-title text-info'>$productName</h6>
+            <h8 class= 'text-dark'>$ $productPrice <br><br></h8>
+            <button class='btn btn-info' name='add'>View Detail</button>
             <input type='hidden' name='product_id' value='$productid'>
         </div>
     </div>
@@ -17,14 +27,14 @@ function componentShop($productName, $productDescription, $productPrice, $produc
 
 function componentHome($productName, $productDescription, $productPrice, $productImage, $productid, $productSeller) {
     $element = "
-    <div class='col-md-4 my-2'>
+    <div class='col-md-3 my-2'>
         <div class='card'>
             <img src='$productImage' class='card-img-top' alt='$productName'>
             <div class='card-body'>
-                <h5 class='card-title'>$productName</h5>
+                <h6 class='card-title'>$productName</h6>
                 <h6>$ $productPrice</h6>
                 <form action='Home.php' method='post'>
-                    <button class='btn btn-primary' name='add'>Add to Cart</button>
+                    <button class='btn btn-info' name='add'><img src='logo/addtocart.png' alt='Add to Cart'></button>
                     <input type='hidden' name='product_id' value='$productid'>
                 </form>
             </div>
@@ -61,7 +71,6 @@ function cartElement($productimg, $productname, $productprice, $productid, $prod
     ";
     echo  $element;
 }
-
 
 
 
