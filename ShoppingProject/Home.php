@@ -87,7 +87,7 @@ if (isset($_POST['add'])){
         </a>
     </div>
     <div class="row text-center mt-5 text-info">
-        <h2 class="text-dark"><b>Featured Products</b></h2>
+        <h2 class="text-dark m-auto"><b>Featured Products</b></h2>
     </div>
     <div class="row text-center py-5">
         <?php
