@@ -98,11 +98,6 @@ img{
     font-size: 1rem;
     font-weight: 400;
   }
-  #about-us{
-    font-size: 2.5rem;
-    font-weight: 400;
-    animation: lights 5s 750ms linear infinite;
-  }
 
   .hover-animation{
     animation: lights 5s 750ms linear infinite; 
