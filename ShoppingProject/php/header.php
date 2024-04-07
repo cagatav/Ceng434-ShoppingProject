@@ -1,6 +1,6 @@
 <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-        <a href="Home.php" class="navbar-brand">
+        <a href="Home.php" class="navbar-brand animation">
             <img src="logo/shopingtime.png" class="ml-3" width="300">
         </a>
         <button class="navbar-toggler"
@@ -48,3 +48,19 @@
         </div>
     </nav>
 </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"/>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+</body>
+</html>

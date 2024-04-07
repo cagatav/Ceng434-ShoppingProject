@@ -2,6 +2,10 @@ img{
     max-width: 100%;
     height: auto;
 }
+@font-face {
+    font-family: 'montserrat'; /* Buraya bir isim verin */
+    src: url('Montserrat-Font.ttf'); /* .ttf dosyasının yolunu ekleyin */
+    }
 
 #cart_count{
     text-align: center;
@@ -23,4 +27,102 @@ img{
 
 .navbar-dark .navbar-nav .nav-link {
     color: #fff; /* Navbar linklerinin rengi */
+}
+@keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+  }
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    animation: lights 5s 750ms linear infinite;
+  }
+  h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    animation: lights 5s 750ms linear infinite;
+  }
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    animation: lights 5s 750ms linear infinite;
+  }
+  h4 {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  #about-us{
+    font-size: 2.5rem;
+    font-weight: 400;
+    animation: lights 5s 750ms linear infinite;
+  }
+
+  .hover-animation{
+    animation: lights 5s 750ms linear infinite; 
+  }
+  .carousel-control-prev-icon{
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: 100%, 100%;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2354B4D3' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+
+}
+.carousel-control-next-icon {
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: 100%, 100%;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2354B4D3' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+body {
+    font-family: 'montserrat';
+    background-image: linear-gradient(#fff, #ffffff);
 }

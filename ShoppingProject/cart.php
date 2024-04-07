@@ -34,8 +34,9 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
 </head>
-<body class="bg-light">
+<body>
 
 <?php require_once('php/header.php'); ?>
 
@@ -43,7 +44,7 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
     <div class="row px-5">
         <div class="col-md-7">
             <div class="shopping-cart">
-                <h4>My Cart</h4>
+                <h3 class="text-dark">My Cart</h3>
                 <hr>
                 <?php
                 $total = 0;
@@ -89,7 +90,7 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
             <!-- Continue to Checkout Button -->
             <div class="mt-3">
                 <?php if(isset($_SESSION['user_id'])): ?>
-                    <a href="payment.php" class="btn btn-primary btn-block">Continue to Checkout</a>
+                    <a href="payment.php" class="btn btn-info btn-block">Continue to Checkout</a>
                 <?php else: ?>
                     <a href="login.php" class="btn btn-primary btn-block">Login to Proceed</a>
                 <?php endif; ?>

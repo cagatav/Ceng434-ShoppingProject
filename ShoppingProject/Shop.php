@@ -88,7 +88,7 @@ if (isset($_POST['add'])){
             </div>
             <div class="col-md-9">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4>Products</h4>
+                    <h3>Products</h3>
                     <div>
                         <label for="sort">Sort by:</label>
                         <select class="form-control" id="sort">

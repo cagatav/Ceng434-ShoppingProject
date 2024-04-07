@@ -34,6 +34,7 @@ function displayProducts($database) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -41,13 +42,13 @@ function displayProducts($database) {
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <h4>Account Details</h4>
-                <p>Name: <?php echo $_SESSION['user_name']; ?></p>
-                <p>Email: <?php echo $_SESSION['user_email']; ?></p>
+                <h3 class="text-dark">Account Details</h3>
+                <p><b>Name:</b> <?php echo $_SESSION['user_name']; ?></p>
+                <p><b>Email:</b> <?php echo $_SESSION['user_email']; ?></p>
                 <a href="logout.php" class="btn btn-danger">Logout</a>
             </div>
             <div class="col-md-6">
-                <h4>Order History</h4>
+                <h3 class="text-dark">Order History</h3>
                 <!-- Display order history here -->
             </div>
         </div>

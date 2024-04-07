@@ -38,10 +38,10 @@ if (isset($_POST['add'])){
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to Our E-Commerce Store</title>
+    <title>CENG 434 - Welcome to Our E-Commerce Store</title>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"/>
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -51,13 +51,6 @@ if (isset($_POST['add'])){
         data-id="cluk9o3tp0001v667bvnwghdb"
         async defer>
     </script>
-        <style>
-            /* Custom CSS to change color of carousel control icons */
-            .carousel-control-prev-icon,
-            .carousel-control-next-icon {
-                background-color: black;
-            }
-        </style>
 </head>
 <body>
 
@@ -65,8 +58,8 @@ if (isset($_POST['add'])){
 <div class="container">
     <div class="row text-center py-5">
         <div class="col">
-            <h1>Welcome to Shopping Time!</h1>
-            <p>Do you know what time it is? It's Shopping Time!</p>
+            <h1 class= "text-dark hover-animation">Welcome to <b>Shopping Time!</b></h1>
+            <p><br>Do you know what time it is? It's <b>Shopping Time!</b></p>
         </div>
     </div>
     <div id="kayarbanner" class="carousel slide" data-ride="carousel">
@@ -77,10 +70,10 @@ if (isset($_POST['add'])){
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="upload/banner1.jpg" class="d-block mx-auto" style="max-width: 600px; height: auto;" alt="...">
+                <img src="upload/banner1.jpg" class="d-block mx-auto" style="max-width: 800px; height: auto;" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner2.jpeg" class="d-block mx-auto" style="max-width: 600px; height: auto;" alt="...">
+                <img src="upload/banner2.jpeg" class="d-block mx-auto" style="max-width: 800px; height: auto;" alt="...">
             </div>
             <!-- BANNER RESİMLERİNİ BURAYA EKLEYEBİLİRSİN -->
         </div>
@@ -93,14 +86,21 @@ if (isset($_POST['add'])){
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <div class="row text-center">
-        <h2>Featured Products</h2>
+    <div class="row text-center mt-5 text-info">
+        <h2 class="text-dark"><b>Featured Products</b></h2>
     </div>
     <div class="row text-center py-5">
         <?php
         $result = $database->getData();
         while ($row = mysqli_fetch_assoc($result)) {
-            componentHome($row['product_name'], $row['product_description'], $row['product_price'], $row['product_image'], $row['product_id'], $row['product_seller']);
+            componentHome(
+                $row['product_name'], 
+                $row['product_description'], 
+                $row['product_price'], 
+                $row['product_image'], 
+                $row['product_id'], 
+                $row['product_seller']
+        );
         }
         ?>
     </div>
