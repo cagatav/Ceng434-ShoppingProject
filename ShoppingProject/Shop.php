@@ -60,6 +60,16 @@ if (isset($_POST['add'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
     <link rel="stylesheet" href="style.css">
     <script src="https://app.livechatai.com/embed.js" data-id="cluk9o3tp0001v667bvnwghdb" async defer></script>
+    <style>
+        a {
+            text-decoration: none !important;
+            display: inline-block; 
+            transition: transform 0.3s ease; 
+        }
+        a:hover {
+            transform: scale(1.03);
+        }
+    </style>
 </head>
 <body>
     <?php require_once("php/header.php"); ?>
