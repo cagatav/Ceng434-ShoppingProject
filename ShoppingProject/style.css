@@ -33,63 +33,63 @@ img{
     0% {
       color: hsl(230, 40%, 80%);
       text-shadow:
-        0 0 1em hsla(320, 100%, 50%, 0.2),
-        0 0 0.125em hsla(320, 100%, 60%, 0.3),
-        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
-        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+        0 0 1em hsla(188, 78%, 41%, 0.745),
+        0 0 0.125em hsla(188, 78%, 41%, 0.745),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0.1),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0.1);
     }
     
     30% { 
       color: hsl(230, 80%, 90%);
       text-shadow:
-        0 0 1em hsla(320, 100%, 50%, 0.5),
-        0 0 0.125em hsla(320, 100%, 60%, 0.5),
-        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
-        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+        0 0 1em hsla(188, 78%, 41%, 0.745),
+        0 0 0.125em hsla(188, 78%, 41%, 0.745),
+        -0.5em -0.125em 0.25em hsla(0, 0%, 0%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.2);
     }
     
     40% { 
       color: hsl(230, 100%, 95%);
       text-shadow:
-        0 0 1em hsla(320, 100%, 50%, 0.5),
-        0 0 0.125em hsla(320, 100%, 90%, 0.5),
-        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0 0 1em hsla(188, 78%, 41%, 0.745),
+        0 0 0.125em hsla(188, 78%, 41%, 0.745),
+        -0.25em -0.125em 0.125em hsla(0, 0%, 0%, 0.3),
         0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
     }
     
     70% {
       color: hsl(230, 80%, 90%);
       text-shadow:
-        0 0 1em hsla(320, 100%, 50%, 0.5),
-        0 0 0.125em hsla(320, 100%, 60%, 0.5),
-        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
-        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+        0 0 1em hsla(188, 78%, 41%, 0.745),
+        0 0 0.125em hsla(188, 78%, 41%, 0.745),
+        0.5em -0.125em 0.25em hsla(0, 0%, 0%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.2);
     }
     
     100% {
       color: hsl(230, 40%, 80%);
       text-shadow:
-        0 0 1em hsla(320, 100%, 50%, 0.2),
-        0 0 0.125em hsla(320, 100%, 60%, 0.3),
-        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
-        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+        0 0 1em hsla(188, 78%, 41%, 0.745),
+        0 0 0.125em hsla(188, 78%, 41%, 0.745),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0.1),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0.1);
     }
     
   }
   h1 {
     font-size: 3.5rem;
     font-weight: 300;
-    animation: lights 5s 750ms linear infinite;
+    animation: lights 10s linear infinite;
   }
   h2 {
     font-size: 3rem;
     font-weight: 300;
-    animation: lights 5s 750ms linear infinite;
+    animation: lights 10s linear infinite;
   }
   h3 {
     font-size: 2.5rem;
     font-weight: 300;
-    animation: lights 5s 750ms linear infinite;
+    animation: lights 10s linear infinite;
   }
   h4 {
     font-size: 2rem;
@@ -101,7 +101,7 @@ img{
   }
 
   .hover-animation{
-    animation: lights 5s 750ms linear infinite; 
+    animation: lights 5s linear infinite; 
   }
   .carousel-control-prev-icon{
     height: 50px;
