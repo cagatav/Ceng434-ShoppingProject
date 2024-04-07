@@ -56,7 +56,7 @@ if (isset($_POST['add'])){
     <div class="row text-center py-5">
         <div class="col">
             <h1 class= "text-dark hover-animation">Welcome to <b>Shopping Time!</b></h1>
-            <p><br>Do you know what time it is? It's <b>Shopping Time!</b></p>
+            <p>Do you know what time it is? It's <b>Shopping Time!</b></p>
         </div>
     </div>
     <div id="kayarbanner" class="carousel slide" data-ride="carousel">
@@ -67,10 +67,10 @@ if (isset($_POST['add'])){
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="upload/banner1.jpg" class="d-block mx-auto" style="max-width: 900px; height: auto;" alt="...">
+                <img src="upload/banner1.jpg" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner2.jpeg" class="d-block mx-auto" style="max-width: 900px; height: auto;" alt="...">
+                <img src="upload/banner2.jpeg" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
             </div>
             <!-- BANNER RESİMLERİNİ BURAYA EKLEYEBİLİRSİN -->
         </div>

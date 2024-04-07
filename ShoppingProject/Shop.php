@@ -66,7 +66,7 @@ if (isset($_POST['add'])){
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-3">
-                <h4>Filters</h4>
+            <br><br><br><h4>Filters</h4><br>
                 <div class="form-group">
                     <label for="productType">Product Type</label>
                     <select class="form-control" id="productType">

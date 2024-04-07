@@ -32,22 +32,14 @@ if(isset($_GET['product_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        .product-card {
-            margin-top: 20px;
-        }
-        .product-card .card-img-top {
-            height: 300px; /* Adjust as needed */
-            object-fit: cover;
-        }
-    </style>
+
 </head>
 <body>
     <?php require_once("php/header.php"); ?>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <div class="card product-card">
+                <div class="product-card">
                     <img src="<?php echo $productImage; ?>" class="card-img-top" alt="<?php echo $productName; ?>">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $productName; ?></h5>
