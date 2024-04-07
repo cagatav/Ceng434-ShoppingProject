@@ -48,7 +48,7 @@ if(isset($_GET['product_id'])) {
                         <p class="card-text">Seller: <?php echo $productSeller; ?></p>
                         <form method="post" action="cart.php">
                             <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
-                            <button type="submit" class="btn btn-primary" name="add_to_cart">Add to Cart</button>
+                            <button class='btn btn-info' name='add'><img src='logo/addtocart.png' alt='Add to Cart'></button>
                         </form>
                     </div>
                 </div>
