@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h2 class="text-center mb-4">Login</h2>
+                <h2 class="text-center mb-4 text-dark">Login</h2>
                 <?php if (isset($error)) echo "<div class='alert alert-danger'>$error</div>"; ?>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="form-group">
@@ -74,9 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label for="password">Password:</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <button type="submit" class="btn btn-info btn-block">Login</button>
                 </form>
-                <p class="text-center mt-3">Don't have an account? <a href="register.php">Register</a></p>
+                <p class="text-center mt-3 ">Don't have an account? <a href="register.php" class= "text-info">Register</a></p>
             </div>
         </div>
     </div>

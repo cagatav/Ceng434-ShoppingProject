@@ -33,7 +33,7 @@
                 <iframe
                   src="https://app.livechatai.com/aibot-iframe/cluk9o3tp0001v667bvnwghdb"
                   style="border:10px solid #EAEAEA"
-                  width="750"
+                  width="145%"
                   height="600"
                   overflow:hidden;
                 ></iframe>
