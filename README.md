@@ -16,7 +16,9 @@ This project was created using HTML, CSS, PHP, and MySQL.
 
 ## Updating Data
 
-To update the data in the project, you can go to "http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=productdb&table=producttable". Add the SQL codes at the bottom to the "producttable" table as SQL.
+To update the data in the project, you can go to "http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=productdb&table=producttable".
+
+Add the SQL codes at the bottom to the "producttable" table as SQL.
 
 SQL codes:
 
