@@ -1,20 +1,24 @@
-# CENG434 Project 
+# CENG434 E-Commerce Project
 
-# 190444082 - Ahmet Enes KÜÇÜKMADAN
+This project was created using HTML, CSS, PHP, and MySQL.
 
-# 190444038 - Enes Çağatay SÖZEN
+## Project Contributors
+- 190444082 - Ahmet Enes KÜÇÜKMADAN
+- 190444038 - Enes Çağatay SÖZEN
 
-This project was created using HTML, CSS, PHP, and MySQL. 
+## Running the Project
 
-To run it, follow these steps:
-
-1. You need to install XAMPP on your computer and activate the Apache and MySQL servers from the XAMPP program.
+1. You must install XAMPP on your computer and activate the Apache and MySQL servers from the XAMPP program.
 
 2. Install the project in the "C:\xampp\htdocs" directory.
 
-3. To view the project, open your web browser and go to "http://localhost/Ceng434-ShoppingProject/ShoppingProject/mainmenu.php".
+3. To view the project, open your web browser and go to "http://localhost/Ceng434-ShoppingProject/ShoppingProject/Home.php".
 
-4. To update the data in the project, you can go to "http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=productdb&table=producttable".
+## Updating Data
+
+To update the data in the project, you can go to "http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=productdb&table=producttable". Add the SQL codes at the bottom to the "producttable" table as SQL.
+
+SQL codes:
 
 ```sql
 INSERT INTO producttable (product_name, product_description, product_price, product_image, product_seller)
