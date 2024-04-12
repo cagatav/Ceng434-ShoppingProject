@@ -20,6 +20,14 @@ To update the data in the project, you can go to "http://localhost/phpmyadmin/in
 
 Add the SQL codes at the bottom to the "producttable" table as SQL.
 
+SQL Rule:
+```sql
+('NAME',
+'DESCRIPTION',
+1PRICE0.00,
+'./upload/IMAGE.jpg',
+'SELLER')
+``` 
 SQL codes:
 
 ```sql
@@ -112,8 +120,3 @@ Razer Blade 17-nin üretebileceği yeni keşfedilen gücün tamamı, buna uygun 
 ```        
 
 
-,('NAME',
-'DESCRIPTION',
-100.00,
-'./upload/product1.jpg',
-'SELLER')
