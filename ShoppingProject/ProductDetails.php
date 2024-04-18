@@ -6,7 +6,7 @@ $database = new MySQL("Productdb", "Producttable");
 
 if(isset($_GET['product_id'])) {
     $product_id = $_GET['product_id'];
-    $result = $database->getData("SELECT * FROM Producttable WHERE id = $product_id");
+    $result = $database->getData("SELECT * FROM Producttable WHERE product_id = $product_id");
 
     if($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);

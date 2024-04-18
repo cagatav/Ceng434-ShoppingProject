@@ -64,8 +64,10 @@ class MySQL
     }
 
     // get product from the database
-    public function getData(){
-        $sql = "SELECT product_id, product_name, product_description, product_price, product_image, product_seller FROM $this->tablename";
+    public function getData($sql = null) {
+        if ($sql === null) {
+            $sql = "SELECT product_id, product_name, product_description, product_price, product_image, product_seller FROM $this->tablename";
+        }
         $result = $this->con->query($sql);
         return $result;
     }

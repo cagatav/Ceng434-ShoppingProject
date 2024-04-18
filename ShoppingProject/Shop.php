@@ -9,9 +9,9 @@ $database = new MySQL("Productdb", "Producttable");
 function displayProducts($database) {
     $result = $database->getData();
     while ($row = mysqli_fetch_assoc($result)){
-        // Wrap each product with anchor tag linking to product.php with product_id parameter
         echo "<div class='col-md-4 mb-3'>";
-        echo "<a href='ProductDetails.php?product_id={$row['product_id']}'>";
+        echo "<a href='ProductDetails.php?product_id=" . $row['product_id'] . "'>";
+
         componentShop($row['product_name'], $row['product_description'], $row['product_price'], $row['product_image'], $row['product_id'], $row['product_seller']);
         echo "</a>";
         echo "</div>";
