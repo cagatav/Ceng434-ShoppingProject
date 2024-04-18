@@ -35,8 +35,7 @@ if (isset($_POST['add'])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CENG 434 - Welcome to Our E-Commerce Store</title>
     <script
@@ -53,7 +52,7 @@ if (isset($_POST['add'])){
 
 <?php require_once ("php/header.php"); ?>
 <div class="container">
-    <div class="row text-center py-5">
+    <div class="row text-center py-4">
         <div class="col">
             <h1 class= "text-dark hover-animation">Welcome to <b>Shopping Time!</b></h1>
             <p>Do you know what time it is? It's <b>Shopping Time!</b></p>
@@ -69,16 +68,16 @@ if (isset($_POST['add'])){
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="upload/banner-welcome.png" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
+                <img src="upload/banner-welcome.png" class="d-block mx-auto" style="width: auto; height: 550px;" alt="banner1">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner-shopnow.png" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
+                <img src="upload/banner-shopnow.png" class="d-block mx-auto" style="width: auto; height: 550px;" alt="banner2">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner-livechatai.png" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
+                <img src="upload/banner-livechatai.png" class="d-block mx-auto" style="width: auto; height: 550px;" alt="banner3">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner-team.png" class="d-block mx-auto" style="max-width: 850px; height: auto;" alt="...">
+                <img src="upload/banner-team.png" class="d-block mx-auto" style="width: auto; height: 550px;" alt="banner4">
             </div>
             <!-- BANNER RESİMLERİNİ BURAYA EKLEYEBİLİRSİN -->
         </div>

@@ -23,6 +23,7 @@ if(isset($_GET['product_id'])) {
     echo "Product ID not provided.";
     exit;
 }
+    
 ?>
 
 <!DOCTYPE html>
@@ -33,27 +34,61 @@ if(isset($_GET['product_id'])) {
     <title>Product Details</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <style>
+        .container {
+            display: flex;
+        }
+        .details {
+        width: 60%;
+        order: 2;
+        margin: auto;
+        display: flex;
+        flex-direction: column; /* Elements inside details are stacked vertically */
+        }
+
+        .price-cart-container {
+            display: flex;
+            justify-content: space-between; /* Aligns children (price and button) on opposite ends */
+            align-items: center;
+        }
+
+        .add-to-cart-button {
+            width: auto; /* Only as wide as needed */
+            margin-left: auto; /* Pushes the button to the right */
+            display: flex;
+            align-items: center; /* Vertically center content inside the button */
+        }
+
+        .image {
+            max-width: 80%;
+            height: auto;
+            margin: auto;
+            order: 1; /* Görsel sol tarafa */
+            align-items: center;
+
+        }
+    </style>
 </head>
 <body>
-    <?php require_once("php/header.php"); ?>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="product-card">
-                    <img src="<?php echo $productImage; ?>" class="card-img-top" alt="<?php echo $productName; ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $productName; ?></h5>
-                        <p class="card-text"><?php echo $productDescription; ?></p>
-                        <p class="card-text">Price: $<?php echo $productPrice; ?></p>
-                        <p class="card-text">Seller: <?php echo $productSeller; ?></p>
-                        <form method="post" action="cart.php">
-                            <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
-                            <button class='btn btn-info' name='add'><img src='logo/addtocart.png' alt='Add to Cart'></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+<?php require_once("php/header.php"); ?>
+    <div class="container">
+        <div class="image">
+            <img src="<?php echo $productImage; ?>" alt="Ürün Resmi" style="width: 700px;">
         </div>
-    </div>
+        <div class="details mt-5">
+
+    <h3 class="text-dark text-center "><?php echo $productName; ?></h3>
+    <p class="text-center"><?php echo $productSeller; ?></p>
+    <p class="text-justify mt-3"><?php echo $productDescription; ?></p>
+    <div class="price-cart-container">
+        <h4 class="font-light text-dark hover-animation mt-5">$ <?php echo $productPrice; ?></h4>
+        <form method="post" action="cart.php">
+            <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+            <button class='btn btn-info add-to-cart-button mt-5' name='add'>
+                <img src='logo/addtocart.png' alt='Add to Cart' style="width: 350px;">
+            </button>
+        </form>
+    </div>        
+</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
-<header id="header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+<header id="header" class="fixed-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info ">
         <a href="Home.php" class="navbar-brand animation">
             <img src="logo/shopingtime.png" class="ml-3" width="300">
         </a>

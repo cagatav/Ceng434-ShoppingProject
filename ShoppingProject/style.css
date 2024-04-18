@@ -1,127 +1,148 @@
 img{
-    max-width: 80%;
-    height: auto;
-    margin: auto;
+  max-width: 80%;
+  height: auto;
+  margin: auto;
 }
 @font-face {
-    font-family: 'montserrat'; /* Buraya bir isim verin */
-    src: url('upload/Montserrat-Font.ttf'); /* .ttf dosyasının yolunu ekleyin */
-    }
+  font-family: 'montserrat'; /* Buraya bir isim verin */
+  src: url('upload/Montserrat-Font.ttf'); /* .ttf dosyasının yolunu ekleyin */
+}
 
 #cart_count{
-    text-align: center;
-    padding: 0 0.9rem 0.1rem 0.9rem;
-    border-radius: 3rem;
+  text-align: center;
+  padding: 0 0.9rem 0.1rem 0.9rem;
+  border-radius: 3rem;
 }
 
 .shopping-cart{
-    padding: 3% 0;
+  padding: 3% 0;
 }
 
 .cart-items + .cart-items{
-    padding: 2% 0;
+  padding: 2% 0;
 }
 
 .price-details h6{
-    padding: 3% 2%;
+  padding: 3% 2%;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #fff; /* Navbar linklerinin rengi */
+  color: #fff; /* Navbar linklerinin rengi */
 }
 @keyframes lights {
-    0% {
-      color: hsl(230, 40%, 80%);
-      text-shadow:
-        0 0 1em hsla(188, 78%, 41%, 0.745),
-        0 0 0.125em hsla(188, 78%, 41%, 0.745),
-        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0.1),
-        1em 0.125em 0.5em hsla(200, 100%, 60%, 0.1);
-    }
-    
-    30% { 
-      color: hsl(230, 80%, 90%);
-      text-shadow:
-        0 0 1em hsla(188, 78%, 41%, 0.745),
-        0 0 0.125em hsla(188, 78%, 41%, 0.745),
-        -0.5em -0.125em 0.25em hsla(0, 0%, 0%, 0.2),
-        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.2);
-    }
-    
-    40% { 
-      color: hsl(230, 100%, 95%);
-      text-shadow:
-        0 0 1em hsla(188, 78%, 41%, 0.745),
-        0 0 0.125em hsla(188, 78%, 41%, 0.745),
-        -0.25em -0.125em 0.125em hsla(0, 0%, 0%, 0.3),
-        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
-    }
-    
-    70% {
-      color: hsl(230, 80%, 90%);
-      text-shadow:
-        0 0 1em hsla(188, 78%, 41%, 0.745),
-        0 0 0.125em hsla(188, 78%, 41%, 0.745),
-        0.5em -0.125em 0.25em hsla(0, 0%, 0%, 0.2),
-        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.2);
-    }
-    
-    100% {
-      color: hsl(230, 40%, 80%);
-      text-shadow:
-        0 0 1em hsla(188, 78%, 41%, 0.745),
-        0 0 0.125em hsla(188, 78%, 41%, 0.745),
-        1em -0.125em 0.5em hsla(40, 100%, 60%, 0.1),
-        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0.1);
-    }
-    
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(188, 78%, 41%, 0.745),
+      0 0 0.125em hsla(188, 78%, 41%, 0.745),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0.1),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0.1);
   }
-  h1 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    animation: lights 10s linear infinite;
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(188, 78%, 41%, 0.745),
+      0 0 0.125em hsla(188, 78%, 41%, 0.745),
+      -0.5em -0.125em 0.25em hsla(0, 0%, 0%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.2);
   }
-  h2 {
-    font-size: 3rem;
-    font-weight: 300;
-    animation: lights 10s linear infinite;
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(188, 78%, 41%, 0.745),
+      0 0 0.125em hsla(188, 78%, 41%, 0.745),
+      -0.25em -0.125em 0.125em hsla(0, 0%, 0%, 0.3),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
   }
-  h3 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    animation: lights 10s linear infinite;
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(188, 78%, 41%, 0.745),
+      0 0 0.125em hsla(188, 78%, 41%, 0.745),
+      0.5em -0.125em 0.25em hsla(0, 0%, 0%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.2);
   }
-  h4 {
-    font-size: 2rem;
-    font-weight: 300;
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(188, 78%, 41%, 0.745),
+      0 0 0.125em hsla(188, 78%, 41%, 0.745),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0.1),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0.1);
   }
-  p {
-    font-size: 1rem;
-    font-weight: 400;
-  }
+}
+h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  animation: lights 10s linear infinite;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  animation: lights 10s linear infinite;
+}
+h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  animation: lights 10s linear infinite;
+}
+h4 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
 
-  .hover-animation{
-    animation: lights 5s linear infinite; 
-  }
-  .carousel-control-prev-icon{
-    height: 50px;
-    width: 50px;
-    background-color: rgba(0, 0, 0, 0);
-    background-size: 100%, 100%;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2354B4D3' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+h1, h3, h4, p {
+  font-family: 'montserrat';
+}
+
+.hover-animation{
+  animation: lights 5s linear infinite; 
+}
+.carousel-control-prev-icon{
+  height: 50px;
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  background-size: 100%, 100%;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2354B4D3' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
 
 }
 .carousel-control-next-icon {
-    height: 50px;
-    width: 50px;
-    background-color: rgba(0, 0, 0, 0);
-    background-size: 100%, 100%;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2354B4D3' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+  height: 50px;
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  background-size: 100%, 100%;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2354B4D3' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 body {
-    font-family: 'montserrat';
-    background-image: linear-gradient(#fff, #ffffff);
+  font-family: 'montserrat';
+  background-image: linear-gradient(#fff, #ffffff);
 }
+html, body {
+  height: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.fixed-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
 .card {
   max-width: 300px;
   overflow: hidden;
@@ -132,13 +153,17 @@ body {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  overflow: hidden; 
+  overflow: hidden;
   min-height: 38px;
 }
+
 .card-body {
   position: relative;
   bottom: 5px;
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.8);
+}
+.large-text {
+  font-size: 24px;
 }

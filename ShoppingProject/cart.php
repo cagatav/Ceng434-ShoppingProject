@@ -4,17 +4,34 @@ session_start();
 require_once("php/MySQL.php");
 require_once("php/component.php");
 
-// Initialize database connection
 $db = new MySQL("Productdb", "Producttable");
-// Handle removing items from the cart
+
+if (isset($_POST['add'])) {
+    if(isset($_SESSION['cart'])){
+        $item_array_id = array_column($_SESSION['cart'], "product_id");
+        if(in_array($_POST['product_id'], $item_array_id)){
+            print_r('Product is already added in the cart!');
+        }
+    }
+    
+        $product_id = $_POST['product_id'];
+        if (!isset($_SESSION['cart'])) {
+            $_SESSION['cart'] = array();
+        }
+        $cart_item = array('product_id' => $product_id);
+        array_push($_SESSION['cart'], $cart_item);  
+    if (!in_array($product_id, array_column($_SESSION['cart'], 'product_id'))) {
+        $cart_item = array('product_id' => $product_id);
+        array_push($_SESSION['cart'], $cart_item);
+    }
+}
+
 if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['product_id'])) {
     $productid = $_GET['product_id'];
     if (isset($_SESSION['cart'])) {
         foreach ($_SESSION['cart'] as $key => $item) {
             if ($item["product_id"] == $productid) {
                 unset($_SESSION['cart'][$key]);
-                // Remove this line to prevent displaying the message
-                // echo 'Product has been removed!';
             }
         }
     }
