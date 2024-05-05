@@ -71,4 +71,21 @@ class MySQL
         $result = $this->con->query($sql);
         return $result;
     }
+
+    public function addToOrderHistory($userId, $productId) {
+        $sql = "INSERT INTO OrderHistory (user_id, product_id) VALUES ('$userId', '$productId')";
+        if ($this->con->query($sql)) {
+            return true;
+        } else {
+            echo "Error: " . $sql . "<br>" . $this->con->error;
+            return false;
+        }
+    }
+
+    public function getOrderHistory($userId) {
+        $sql = "SELECT * FROM OrderHistory WHERE user_id = $userId";
+        $result = $this->con->query($sql);
+        return $result;
+    }
+    
 }

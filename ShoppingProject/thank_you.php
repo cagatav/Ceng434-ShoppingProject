@@ -1,6 +1,29 @@
+<?php
+session_start();
+require_once("php/MySQL.php");
+require_once("php/component.php");
+
+$db = new MySQL("productdb", "producttable");
+
+// Order history'ye ürünleri ekle
+if (isset($_SESSION['user_id'])) {
+    $userId = $_SESSION['user_id'];
+    if (!empty($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $cartItem) {
+            $productId = $cartItem['product_id'];
+            $db->addToOrderHistory($userId, $productId);
+        }
+    }
+}
+
+// işlem başarılı olup bu sayfaya gelirse sepeti sıfırlayacak
+unset($_SESSION['cart']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Head kısmı -->
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="3;url=login.php">
     <title>Thank You</title>

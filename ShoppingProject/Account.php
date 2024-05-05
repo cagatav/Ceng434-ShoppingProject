@@ -11,19 +11,8 @@ if (!isset($_SESSION['user_id'])) {
 require_once('php/MySQL.php');
 require_once('./php/component.php');
 
-$database = new MySQL("Productdb", "Producttable");
-
-function displayProducts($database) {
-    $result = $database->getData();
-    while ($row = mysqli_fetch_assoc($result)){
-        // Wrap each product with anchor tag linking to product.php with product_id parameter
-        echo "<div class='col-md-4 mb-3'>";
-        echo "<a href='ProductDetails.php?product_id={$row['product_id']}'>";
-        componentShop($row['product_name'], $row['product_description'], $row['product_price'], $row['product_image'], $row['product_id'], $row['product_seller']);
-        echo "</a>";
-        echo "</div>";
-    }
-}
+// Create a MySQL object
+$db = new MySQL("Productdb", "Producttable");
 
 ?>
 
@@ -49,7 +38,41 @@ function displayProducts($database) {
             </div>
             <div class="col-md-6">
                 <h3 class="text-dark">Order History</h3>
-                <!-- Display order history here -->
+                <div class="list-group">
+                <?php  
+                    if (isset($_SESSION['user_id'])) {
+                        $userId = $_SESSION['user_id'];
+                        $result = $db->getOrderHistory($userId);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $productId = $row['product_id'];
+                                $product = $db->executeQuery("SELECT * FROM Producttable WHERE product_id = $productId")->fetch_assoc();
+                    ?>
+                                <a href="productdetails.php?product_id=<?php echo $product['product_id']; ?>" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1"><?php echo $product['product_name']; ?></h5>
+                                        <small><?php echo $row['order_date']; ?></small>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="<?php echo $product['product_image']; ?>" class="img-fluid" alt="Product Image">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p class="mb-1">Price: <?php echo $product['product_price']; ?></p>
+                                            <p class="mb-1">Order Number: <?php echo $row['order_id']; ?></p>
+                                        </div>
+                                    </div>
+                                </a>
+                    <?php
+                            }
+                        } else {
+                            echo "<p>No orders found.</p>";
+                        }
+                    } else {
+                        echo "<p>Please login to view order history.</p>";
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     </div>
