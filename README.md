@@ -26,12 +26,12 @@ SQL Rule:
 'DESCRIPTION',
 1PRICE0.00,
 './upload/IMAGE.jpg',
-'SELLER')
+'SELLER','product_type')
 ``` 
 SQL codes:
 
 ```sql
-INSERT INTO producttable (product_name, product_description, product_price, product_image, product_seller)
+INSERT INTO producttable (product_name, product_description, product_price, product_image, product_seller, product_type)
 VALUES 
 ('GIGABYTE 32" 144Hz Curved Gaming Monitör',
 'DÜNYANIN İLK 31.5" UHD 144HZ KAVİSLİ OYUN MONİTÖRÜ
@@ -43,7 +43,8 @@ En yeni HDMI 2.1, yeni nesil konsolları destekleyen 4K@144Hz-lik daha yüksek b
 KVM özelliği, tek bir klavye, video ve fare seti aracılığıyla birden fazla cihazı kontrol etmenizi sağlar. Özel KVM düğmemizle, anahtarlama cihazlarının daha kolay olamayacağını göreceksiniz! Bir çırpıda gibi hızlı!',
 464,
 './upload/pro1.jpg',
-'GIGABYTE')
+'GIGABYTE',
+'Monitor')
 
 ,('ASUS 32" ROG Swift 160Hz FastIPS Gaming Monitör',
 'Profesyonel oyuncular için tasarlanan 160Hz yenileme hızına sahip 32 inç 4K (3840 x 2160) mini LED oyuncu monitörü
@@ -55,19 +56,22 @@ DCI-P3 %96 geniş renk gamıyla Quantum-dot ekran, gerçekçi renkler ve daha p�
 AMD FreeSync Premium Pro akıcı, düşük gecikmeli ve yırtılmayan görüntüler sunar',
 577.45,
 './upload/pro2.jpg',
-'ASUS')
+'ASUS',
+'Monitor')
 
 ,('ASUS TUF GAMING 27" 165Hz Premium Gaming Monitör',
 'TUF Gaming VG279Q1A, ultra yüksek 165Hz yenileme hızına sahip 27 inç boyutunda bir Full HD (1920 x 1080) IPS ekran. Oyuncular ve etkileyici oyun deneyimi arayan herkes için tasarlanan bu monitör iddialı özelliklerle donatıldı. Elbette hepsi bunlarla sınırlı değil... Özel ELMB teknolojisi; 1 ms MPRT tepki süresi ve Adaptive-Sync (FreeSync™ Premium) teknolojisiyle hiçbir yırtılma veya takılma olmadan inanılmaz akıcı bir oyun deneyimi sunuyor.',
 159.28,
 './upload/pro3.jpg',
-'ASUS')
+'ASUS',
+'Monitor')
 
 ,('ViewSonic 24" 180Hz FreeSync Fast IPS FHD Gaming Monitör',
 'Ne sıklıkta veya ne zaman oynarsanız oynayın, Omni VX2428 ile her zaman kazanırsınız. AMD FreeSync™ Premium, VESA Adaptive Sync ve VESA clearMR-den oluşan üçlü sertifikasıyla, bozulma olmadan oyun oynamanın ve gelişmiş netliğin keyfini çıkarmanızı sağlar. Keskin çerçeveler ve olağanüstü renk performansı, hızlı bir IPS paneli tarafından sağlanırken, VX2428-in yüksek 180Hz yenileme hızı, pürüzsüz görselleri ve minimum giriş gecikmesini destekler. Bu kadar iyi olmayacağını düşünebilirsiniz, ama öyle. Sadece işi yapmakla kalmayacak - yorucu oyun oturumları, video ve fotoğraf düzenleme veya ofis işleriniz olsun - şık, güzel tasarlanmış bir monitör üzerinde çalışacaksınız.',
 109.99,
 './upload/pro4.jpg',
-'ViewSonic')
+'ViewSonic',
+'Monitor')
 
 ,('MSI CREATOR 16 AI STUDIO A1VIG-024TR ULTRA 9 185H RTX4090 2TB SSD 16" UHD+ 120Hz Gaming Notebook',
 'İşlemci: Intel® Core™ Ultra 9 185H (24M Cache, up to 5.10 GHz)
@@ -88,7 +92,8 @@ Boyutlar: 355.8 x 259.7 x 19.95 mm
 Ağırlık: 1.99 kg',
 949.59,
 './upload/pro4.jpg',
-'MSI')
+'MSI',
+'Notebook')
 
 ,('LENOVO IdeaPad Duet 5 12IAU7 i7-1255U 16GB DDR4 Iris Xe Graphics 512GB SSD 12.4" 240Hz W11H Notebook',
 'LENOVO IDEAPAD DUET
@@ -100,7 +105,8 @@ Geniş renk yelpazesi ve Dolby Vision® ile çarpıcı 2,5K ekran,
 Kolayca taşınabilir ve dayanıklıdır.',
 949.99,
 './upload/pro5.jpg',
-'Lenovo')
+'Lenovo',
+'Notebook')
 
 ,('GIGABYTE AORUS 7 9MF i5-12500H RTX4050 GDDR6 6GB 512GB SSD 17.3" FHD 360Hz Gaming Notebook',
 'Yepyeni AORUS 7, güçlü performansı ve mobiliteyi, NVIDIA DLSS 3, ultra verimli Ada Lovelace kemeri ve desteklenen güçlü 12. Max-Q Technologies, herhangi bir AAA oyununu sorunsuz çalıştırmanın gücünü hissedin. Yüksek ekran-gövde oranına sahip 360 Hz oyun paneli, oyuncuların bir sinema salonu veya birinci sınıf e-spor odası gibi pürüzsüz, yüksek kaliteli görsellere kapılmalarını sağlar.
@@ -108,7 +114,8 @@ Dünyanın İlk Dört Taraflı Süper İnce Çerçeveli Oyun Dizüstü Bilgisaya
 AORUS 7, son derece pürüzsüz bir görsel şölen ve muhteşem bir geniş renk gamı ile kusursuz daldırma için dört taraflı süper ince çerçeveli ekrana sahiptir. Yüksek yenileme hızı, herhangi bir gölgelenmeyi ortadan kaldırarak oyuncuların savaş alanına hükmederken muhteşem görsellerin keyfini çıkarmasına olanak tanır.',
 959.99,
 './upload/pro6.jpg',
-'GIGABYTE')
+'GIGABYTE',
+'Notebook')
 
 ,('RAZER Blade 17 i7-12800H 16GB DDR5 RTX 3060 GDDR6 6GB 1TB SSD 17.3" QHD 240Hz Gaming Notebook',
 'Yeni Razer Blade 17 her zamankinden daha güçlü, tasarımı ve geliştirilmiş termal özellikleriyle kompakt olmasına rağmen Blade 17, Profesyonelleri en yeni NVIDIA ve Intel işlemcilerle güçlendiriyor. Hareket halindeyken performans gerektiren AAA oyunlarına dayanabilen, oyun sırasında canlı video akışı yapabilen veya başyapıtlar yaratabilen Blade 17, güçlü bir mobil masaüstü bilgisayardır.
@@ -116,7 +123,8 @@ Uygulamaları yüklerken, oyunları çalıştırırken ve diğer günlük bilgis
 Razer Blade 17-nin üretebileceği yeni keşfedilen gücün tamamı, buna uygun bir termal performans olmadan anlamsız olacaktır. Daha fazla kanatçık, fan ve daha büyük sıvı kapasitesiyle güncellenen sistem, termal eşiği en üst düzeye çıkarmak ve dizüstü bilgisayardaki FPS-nin her onsunu sıkıştırmak için nanopartikül termal engelleyicilerini ve sunucu sınıfı bileşenlerini en üst düzeye çıkarır. Bu sistem yalnızca dizüstü bilgisayarın maksimum düzeyde performans göstermesini sağlamakla kalmıyor, aynı zamanda Razer Blade dizüstü bilgisayarların başka hiçbir yerde bulunamayacak kadar ince bir form faktörünü koruyabilmesini de sağlıyor.',
 1949.99,
 './upload/pro7.jpg',
-'Razer')
+'Razer',
+'Notebook')
 ```        
 
 

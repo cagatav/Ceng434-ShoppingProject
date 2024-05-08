@@ -47,6 +47,7 @@ class MySQL
                     product_price FLOAT,
                     product_image VARCHAR (100),
                     product_seller VARCHAR (25) NOT NULL
+                    /*product_type VARCHAR (50) NOT NULL*/
                     );";
 
             if (!mysqli_query($this->con, $sql)){
@@ -86,6 +87,27 @@ class MySQL
         $sql = "SELECT * FROM OrderHistory WHERE user_id = $userId";
         $result = $this->con->query($sql);
         return $result;
+    }
+
+    public function getFilterOptions() {
+        $sql = "SELECT DISTINCT product_type FROM $this->tablename";
+        $result = $this->con->query($sql);
+        $product_types = array();
+        while ($row = $result->fetch_assoc()) {
+            $product_types[] = $row['product_type'];
+        }
+    
+        $sql = "SELECT DISTINCT product_seller FROM $this->tablename";
+        $result = $this->con->query($sql);
+        $product_sellers = array();
+        while ($row = $result->fetch_assoc()) {
+            $product_sellers[] = $row['product_seller'];
+        }
+    
+        return array(
+            'product_types' => $product_types,
+            'product_sellers' => $product_sellers
+        );
     }
     
 }

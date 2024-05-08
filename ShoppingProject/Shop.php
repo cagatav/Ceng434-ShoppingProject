@@ -9,7 +9,6 @@ $database = new MySQL("Productdb", "Producttable");
 function displayProducts($database) {
     $result = $database->getData();
     while ($row = mysqli_fetch_assoc($result)){
-        // Wrap each product with anchor tag linking to product.php with product_id parameter
         echo "<div class='col-md-4 mb-3'>";
         echo "<a href='ProductDetails.php?product_id={$row['product_id']}'>";
         componentShop($row['product_name'], $row['product_description'], $row['product_price'], $row['product_image'], $row['product_id'], $row['product_seller']);
@@ -19,11 +18,8 @@ function displayProducts($database) {
 }
 
 if (isset($_POST['add'])){
-
     if(isset($_SESSION['cart'])){
-
         $item_array_id = array_column($_SESSION['cart'], "product_id");
-
         if(in_array($_POST['product_id'], $item_array_id)){
             print_r('Product is already added in the cart!');
         }else{
@@ -32,17 +28,12 @@ if (isset($_POST['add'])){
             $item_array = array(
                 'product_id' => $_POST['product_id']
             );
-
             $_SESSION['cart'][$count] = $item_array;
         }
-
     }else{
-
         $item_array = array(
                 'product_id' => $_POST['product_id']
         );
-
-        // Create new session variable
         $_SESSION['cart'][0] = $item_array;
         print_r($_SESSION['cart']);
     }
@@ -59,7 +50,30 @@ if (isset($_POST['add'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
     <link rel="stylesheet" href="style.css">
-    <script src="https://app.livechatai.com/embed.js" data-id="cluk9o3tp0001v667bvnwghdb" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function fetchProducts(filter, sort) {
+                $.ajax({
+                    url: 'fetch_products.php',
+                    method: 'POST',
+                    data: { filter: filter, sort: sort },
+                    success: function(response) {
+                        $('#productList').html(response);
+                    }
+                });
+            }
+
+            $('#productType, #product_seller, #sort').change(function() {
+                var filter = {
+                    productType: $('#productType').val(),
+                    product_seller: $('#product_seller').val()
+                };
+                var sort = $('#sort').val();
+                fetchProducts(filter, sort);
+            });
+        });
+    </script>
     <style>
         a {
             text-decoration: none !important;
@@ -81,18 +95,21 @@ if (isset($_POST['add'])){
                     <label for="productType">Product Type</label>
                     <select class="form-control" id="productType">
                         <option>All</option>
-                        <option>Phone</option>
-                        <option>Laptop</option>
-                        <option>Watch</option>
+                        <option>Notebook</option>
+                        <option>Monitor</option>
+                        <!-- <option> seçenekleri arttır </option> -->
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="brand">Brand</label>
-                    <select class="form-control" id="brand">
+                    <label for="product_seller">Brand</label>
+                    <select class="form-control" id="product_seller">
                         <option>All</option>
-                        <option>Apple</option>
-                        <option>Samsung</option>
-                        <option>HP</option>
+                        <option>ASUS</option>
+                        <option>GIGABYTE</option>
+                        <option>Lenovo</option>
+                        <option>MSI</option>
+                        <option>ViewSonic</option>
+                        <option>Razer</option>
                     </select>
                 </div>
             </div>
