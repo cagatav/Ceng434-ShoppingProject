@@ -39,7 +39,7 @@ unset($_SESSION['cart']);
             <div class="mt-5 text-center">
                 <h2>Thank You!</h2>
                 <p>Your order has been placed successfully.</p>
-                <p>Redirecting you to the login page...</p>
+                <p>Redirecting you to the account page...</p>
             </div>
         </div>
     </div>

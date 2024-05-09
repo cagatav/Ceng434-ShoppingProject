@@ -10,8 +10,8 @@ class MySQL
 
     // class constructor
     public function __construct(
-        $dbname = "Newdb",
-        $tablename = "Productdb",
+        $dbname = "productdb",
+        $tablename = "producttable",
         $servername = "localhost",
         $username = "root",
         $password = ""
@@ -31,7 +31,7 @@ class MySQL
             die("Connection failed : " . mysqli_connect_error());
         }
 
-        // query
+        // create database if not exists
         $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 
         // execute query
@@ -54,6 +54,20 @@ class MySQL
                 echo "Error creating table : " . mysqli_error($this->con);
             }
 
+            // create OrderHistory table if not exists
+            /* $sql = "CREATE TABLE IF NOT EXISTS OrderHistory (
+                order_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                user_id INT(11) NOT NULL,
+                product_id INT(11) NOT NULL,
+                order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (user_id) REFERENCES Users(user_id),
+                FOREIGN KEY (product_id) REFERENCES $tablename(product_id)
+            )";
+
+            if (!mysqli_query($this->con, $sql)){
+                echo "Error creating table : " . mysqli_error($this->con);
+            } */
+
         }else{
             return false;
         }
@@ -67,14 +81,36 @@ class MySQL
     // get product from the database
     public function getData($sql = null) {
         if ($sql === null) {
-            $sql = "SELECT product_id, product_name, product_description, product_price, product_image, product_seller FROM $this->tablename";
+            $sql = "SELECT product_id, product_name, product_description, product_price, product_image, product_seller, product_type FROM $this->tablename";
         }
         $result = $this->con->query($sql);
         return $result;
     }
 
     public function addToOrderHistory($userId, $productId) {
-        $sql = "INSERT INTO OrderHistory (user_id, product_id) VALUES ('$userId', '$productId')";
+    $sql = "INSERT INTO OrderHistory (user_id, product_id) VALUES ('$userId', '$productId')";
+    if ($this->con->query($sql)) {
+        return true;
+    } else {
+        echo "Error: " . $sql . "<br>" . $this->con->error;
+        return false;
+    }
+}
+
+
+    public function addToProductTable($product_name, $product_description, $product_price, $product_image, $product_seller, $product_type) {
+        $sql = "INSERT INTO $this->tablename (product_name, product_description, product_price, product_image, product_seller, product_type) 
+                VALUES ('$product_name', '$product_description', '$product_price', '$product_image', '$product_seller', '$product_type')";
+        if ($this->con->query($sql)) {
+            return true;
+        } else {
+            echo "Error: " . $sql . "<br>" . $this->con->error;
+            return false;
+        }
+    }
+
+    public function deleteProduct($productId) {
+        $sql = "DELETE FROM $this->tablename WHERE product_id = $productId";
         if ($this->con->query($sql)) {
             return true;
         } else {
@@ -109,5 +145,11 @@ class MySQL
             'product_sellers' => $product_sellers
         );
     }
-    
-}
+            // MySQL.php dosyasında
+        public function getOrders() {
+            $sql = "SELECT * FROM productdb.orderhistory";
+            $result = $this->con->query($sql);
+            return $result;
+        }
+    }
+?>

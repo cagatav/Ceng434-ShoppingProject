@@ -19,7 +19,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['email']) && isset($_POST['password'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
+        // E-posta admin'e ve şifre admin'e eşitse, yönetici paneline yönlendir
+        if ($email === "admin@gmail.com" && $password === "admin") {
+            $_SESSION['user_id'] = "admin";
+            $_SESSION['user_name'] = "Admin";
+            $_SESSION['user_email'] = "admin@gmail.com";
 
+            // Yönetici paneline yönlendir
+            header("Location: AdminPanel.php");
+            exit;
+        }
         // Query the database to fetch user with provided email
         $query = "SELECT * FROM users WHERE email = '$email'";
         $result = $database->executeQuery($query);
@@ -33,9 +42,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['user_name'] = $row['name'];
                 $_SESSION['user_email'] = $row['email'];
                 
-                // Redirect to account page
-                header("Location: Account.php");
-                exit;
+                // Check if user is admin
+                if ($row['is_admin'] == 1) {
+                    // If admin, redirect to admin panel
+                    header("Location: AdminPanel.php");
+                    exit;
+                } else {
+                    // If normal user, redirect to account page
+                    header("Location: Account.php");
+                    exit;
+                }
             } else {
                 $error = "Invalid email or password.";
             }
