@@ -82,32 +82,23 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
         </div>
         <div class="col-md-4 offset-md-1 border rounded mt-5 bg-white h-25">
             <div class="pt-4">
-                <h6>PRICE DETAILS</h6>
-                <hr>
-                <div class="row price-details">
-                    <div class="col-md-6">
-                        <?php
-                        if (!empty($_SESSION['cart'])) {
-                            $count = count($_SESSION['cart']);
-                            echo "<h6>Price ($count items)</h6>";
-                        } else {
-                            echo "<h6>Price (0 items)</h6>";
-                        }
-                        ?>
-                        <hr>
-                        <h6>Total Amount</h6>
-                    </div>
-                    <div class="col-md-6">
-                        <h6>$<?php echo $total; ?></h6>
-                        <hr>
-                        <h6>$<?php echo $total; ?></h6>
-                    </div>
+            <h6 class="pt-2">PRICE DETAILS</h6>
+            <hr>
+            <div class="row price-details">
+                <div class="col-md-6">
+                    <h6>Price (<span id="item-count">0</span> items)</h6>
+                    <h6>Total Amount</h6>
+                </div>
+                <div class="col-md-6">
+                    <h6>$<span id="total-price">0.00</span></h6>
+                    <h6>$<span id="total-amount">0.00</span></h6>
+                </div>
                 </div>
             </div>
             <!-- Continue to Checkout Button -->
             <div class="mt-3">
                 <?php if(isset($_SESSION['user_id'])): ?>
-                    <a href="payment.php" class="btn btn-info btn-block">Continue to Checkout</a>
+                    <a href="payment.php" class="btn btn-info btn-block mb-3">Continue to Checkout</a>
                 <?php else: ?>
                     <a href="login.php" class="btn btn-primary btn-block">Login to Proceed</a>
                 <?php endif; ?>
@@ -116,6 +107,52 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
     </div>
     
 </div>
+<script>
+    function updateQuantity(action, productId, productPrice) {
+        var quantityInput = document.getElementById('quantity-' + productId);
+        var currentQuantity = parseInt(quantityInput.value);
+
+        if (action === 'plus') {
+            currentQuantity += 1;
+        } else if (action === 'minus' && currentQuantity > 1) {
+            currentQuantity -= 1;
+        }
+
+        quantityInput.value = currentQuantity;
+
+        var productForm = document.getElementById('cart-form-' + productId);
+        var priceElement = productForm.querySelector('.product-price');
+        var newPrice = productPrice * currentQuantity;
+        priceElement.textContent = '$' + newPrice.toFixed(2);
+
+        updatePriceDetails();
+    }
+
+    function updatePriceDetails() {
+        var total = 0;
+        var itemCount = 0;
+        var priceElements = document.querySelectorAll('.product-price');
+        var quantityInputs = document.querySelectorAll('.form-control.w-25.d-inline');
+
+        priceElements.forEach(function(element, index) {
+            var price = parseFloat(element.textContent.replace('$', ''));
+            total += price;
+            itemCount += parseInt(quantityInputs[index].value);
+        });
+
+        document.getElementById('total-price').textContent = total.toFixed(2);
+        document.getElementById('total-amount').textContent = total.toFixed(2);
+        document.getElementById('item-count').textContent = itemCount;
+    }
+
+    // Initial calculation of total price and item count
+    window.onload = function() {
+        updatePriceDetails();
+    }
+</script>
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -126,6 +163,7 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        
 </body>
 
 </html>
