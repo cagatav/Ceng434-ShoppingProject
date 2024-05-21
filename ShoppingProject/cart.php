@@ -87,11 +87,9 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
             <div class="row price-details">
                 <div class="col-md-6">
                     <h6>Price (<span id="item-count">0</span> items)</h6>
-                    <h6>Total Amount</h6>
                 </div>
                 <div class="col-md-6">
                     <h6>$<span id="total-price">0.00</span></h6>
-                    <h6>$<span id="total-amount">0.00</span></h6>
                 </div>
                 </div>
             </div>
@@ -141,7 +139,6 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
         });
 
         document.getElementById('total-price').textContent = total.toFixed(2);
-        document.getElementById('total-amount').textContent = total.toFixed(2);
         document.getElementById('item-count').textContent = itemCount;
     }
 
