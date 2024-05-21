@@ -3,7 +3,6 @@ session_start();
 
 require_once("php/MySQL.php");
 require_once("php/component.php");
-
 $db = new MySQL("Productdb", "Producttable");
 
 if (isset($_POST['add'])) {
@@ -13,13 +12,12 @@ if (isset($_POST['add'])) {
             print_r('Product is already added in the cart!');
         }
     }
-    
-        $product_id = $_POST['product_id'];
-        if (!isset($_SESSION['cart'])) {
-            $_SESSION['cart'] = array();
-        }
-        $cart_item = array('product_id' => $product_id);
-        array_push($_SESSION['cart'], $cart_item);  
+    $product_id = $_POST['product_id'];
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+    $cart_item = array('product_id' => $product_id);
+    array_push($_SESSION['cart'], $cart_item);  
     if (!in_array($product_id, array_column($_SESSION['cart'], 'product_id'))) {
         $cart_item = array('product_id' => $product_id);
         array_push($_SESSION['cart'], $cart_item);
@@ -44,9 +42,7 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
-    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
@@ -64,36 +60,36 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
                 <h3 class="text-dark">My Cart</h3>
                 <hr>
                 <?php
-                $total = 0;
-                if (!empty($_SESSION['cart'])) {
-                    $productids = array_column($_SESSION['cart'], 'product_id');
-                    $result = $db->getData();
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        if (in_array($row['product_id'], $productids)) {
-                            cartElement($row['product_image'], $row['product_name'], $row['product_price'], $row['product_id'], $row['product_seller']);
-                            $total += (int)$row['product_price'];
+                    $total = 0;
+                    if (!empty($_SESSION['cart'])) {
+                        $productids = array_column($_SESSION['cart'], 'product_id');
+                        $result = $db->getData();
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            if (in_array($row['product_id'], $productids)) {
+                                cartElement($row['product_image'], $row['product_name'], $row['product_price'], $row['product_id'], $row['product_seller']);
+                                $total += (int)$row['product_price'];
+                            }
                         }
+                    } 
+                    else {
+                        echo "<h5>Cart is Empty</h5>";
                     }
-                } else {
-                    echo "<h5>Cart is Empty</h5>";
-                }
                 ?>
             </div>
         </div>
         <div class="col-md-4 offset-md-1 border rounded mt-5 bg-white h-25">
             <div class="pt-4">
-            <h6 class="pt-2">PRICE DETAILS</h6>
-            <hr>
-            <div class="row price-details">
-                <div class="col-md-6">
-                    <h6>Price (<span id="item-count">0</span> items)</h6>
-                </div>
-                <div class="col-md-6">
-                    <h6>$<span id="total-price">0.00</span></h6>
-                </div>
+                <h6 class="pt-2">PRICE DETAILS</h6>
+                <hr>
+                <div class="row price-details">
+                    <div class="col-md-6">
+                        <h6>Total (<span id="item-count">0</span> items)</h6>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>$<span id="total-price">0.00</span></h6>
+                    </div>
                 </div>
             </div>
-            <!-- Continue to Checkout Button -->
             <div class="mt-3">
                 <?php if(isset($_SESSION['user_id'])): ?>
                     <a href="payment.php" class="btn btn-info btn-block mb-3">Continue to Checkout</a>
@@ -141,16 +137,10 @@ if (isset($_POST['remove']) && $_GET['action'] == 'remove' && isset($_GET['produ
         document.getElementById('total-price').textContent = total.toFixed(2);
         document.getElementById('item-count').textContent = itemCount;
     }
-
-    // Initial calculation of total price and item count
     window.onload = function() {
         updatePriceDetails();
     }
 </script>
-
-
-
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

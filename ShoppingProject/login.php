@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_email'] = "admin@gmail.com";
 
             // Yönetici paneline yönlendir
-            header("Location: AdminPanel.php");
+            header("Location: Account.php");
             exit;
         }
         // Query the database to fetch user with provided email
@@ -72,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 <?php require_once("php/header.php"); ?>
@@ -92,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <button type="submit" class="btn btn-info btn-block">Login</button>
                 </form>
-                <p class="text-center mt-3 ">Don't have an account? <a href="register.php" class= "text-info">Register</a></p>
+                <p class="text-center mt-3">Don't have an account? <a href="register.php" class="text-info">Register</a></p>
             </div>
         </div>
     </div>
