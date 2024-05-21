@@ -60,15 +60,11 @@ if (isset($_POST['delete_product'])) {
     <title>Admin Panel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-        /* Navbar CSS */
         .navbar-brand {
             font-size: 24px;
         }
-        .navbar .nav-item {
-            margin-right: 15px;
-        }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
         }
         .product-card {
             border: 1px solid #ccc;
@@ -97,8 +93,10 @@ if (isset($_POST['delete_product'])) {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Your Brand</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a href="Home.php" class="navbar-brand animation">
+            <img src="logo/shopingtime.png" class="ml-3" width="300">
+        </a>            
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">

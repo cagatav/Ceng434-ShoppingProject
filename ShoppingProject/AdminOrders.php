@@ -29,12 +29,8 @@ if (isset($_POST['logout'])) {
         .navbar-brand {
             font-size: 24px;
         }
-        .navbar .nav-item {
-            margin-right: 15px;
-        }
         .container {
-            max-width: 800px;
-            margin-top: 50px;
+            max-width: 1000px;
         }
         .order-card {
             border: 1px solid #ccc;
@@ -53,9 +49,11 @@ if (isset($_POST['logout'])) {
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Your Brand</a>
+            <a href="Home.php" class="navbar-brand animation">
+                <img src="logo/shopingtime.png" class="ml-3" width="300">
+            </a>  
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
@@ -78,7 +76,7 @@ if (isset($_POST['logout'])) {
         </div>
     </nav>
     <div class="container">
-        <h2 class="text-center mb-4">Orders</h2>
+        <h2 class="text-center mb-4 mt-5">Orders</h2>
 
         <?php if ($orders->num_rows > 0): ?>
             <?php while ($order = $orders->fetch_assoc()): ?>
