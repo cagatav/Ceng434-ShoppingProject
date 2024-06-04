@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
@@ -28,7 +27,6 @@
                     <div class="form-group col-md-6">
                         <label for="city">City</label>
                         <select class="form-control" id="city" name="city" required>
-                            <!-- City options will be populated based on the selected country -->
                         </select>
                     </div>
                 </div>
@@ -41,7 +39,7 @@
                         <label for="phone">Phone Number</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="phoneCode">+1</span> <!-- Default country code -->
+                                <span class="input-group-text" id="phoneCode">+1</span>
                             </div>
                             <input type="text" class="form-control" id="phone" name="phone" required>
                         </div>
@@ -62,7 +60,7 @@
                     </select>
                 </div>
                 
-                <!-- Credit Card Information -->
+
                 <div id="creditCardFields" style="display: none;">
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -82,7 +80,7 @@
                     </div>
                 </div>
 
-                <!-- Gift Card Information -->
+
                 <div id="giftCardFields" style="display: none;">
                     <div class="form-group">
                         <label for="giftCardCode">Gift Card Code</label>
@@ -96,7 +94,7 @@
     </div>
 </div>
 
-<!-- Bootstrap JS -->
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -107,7 +105,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <script>
-    // Object containing country codes, their corresponding cities, and phone codes
+
     const countryData = {
         "TR": {
             "cities": ["Ankara", "İstanbul"],
@@ -117,21 +115,21 @@
             "cities": ["New York", "Los Angeles"],
             "phoneCode": "+1"
         }
-        // Add more countries and their data here
+
     };
 
-    // Function to update the city options and phone code when a country is selected
+
     $('#country').change(function () {
         const country = $(this).val();
         const data = countryData[country];
-        $('#phoneCode').text(data.phoneCode); // Update phone code
-        $('#city').empty(); // Clear previous options
+        $('#phoneCode').text(data.phoneCode); 
+        $('#city').empty(); 
         $.each(data.cities, function(index, city) {
             $('#city').append('<option value="' + city + '">' + city + '</option>');
         });
     });
 
-    // Show relevant payment fields based on selected payment method
+
     $('#paymentMethod').change(function () {
         const method = $(this).val();
         if (method === "credit_card") {
@@ -146,11 +144,11 @@
         }
     });
 
-    // Initial population of cities and phone code based on the selected country
+
     $(document).ready(function() {
         const country = $('#country').val();
         const data = countryData[country];
-        $('#phoneCode').text(data.phoneCode); // Update phone code
+        $('#phoneCode').text(data.phoneCode); 
         $.each(data.cities, function(index, city) {
             $('#city').append('<option value="' + city + '">' + city + '</option>');
         });

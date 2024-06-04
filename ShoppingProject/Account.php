@@ -1,17 +1,16 @@
 <?php
 session_start();
 
-// Check if the user is logged in, if not redirect to login page
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
 
-// Include necessary files
+
 require_once('php/MySQL.php');
 require_once('./php/component.php');
 
-// Create a MySQL object
 $db = new MySQL("Productdb", "Producttable");
 
 ?>

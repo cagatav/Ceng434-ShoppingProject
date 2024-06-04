@@ -1,26 +1,26 @@
 <?php
 session_start();
 
-// Function to create database and table if they don't exist
+
 function createDatabaseAndTable($host, $username, $password, $dbName, $tableName) {
-    // Connect to MySQL server
+
     $conn = new mysqli($host, $username, $password);
 
-    // Check connection
+
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Create database if it doesn't exist
+
     $sqlCreateDB = "CREATE DATABASE IF NOT EXISTS $dbName";
     if ($conn->query($sqlCreateDB) === FALSE) {
         echo "Error creating database: " . $conn->error;
     }
 
-    // Select the database
+
     $conn->select_db($dbName);
 
-    // Create table if it doesn't exist
+
     $sqlCreateTable = "CREATE TABLE IF NOT EXISTS $tableName (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(50) NOT NULL,
@@ -31,44 +31,44 @@ function createDatabaseAndTable($host, $username, $password, $dbName, $tableName
         echo "Error creating table: " . $conn->error;
     }
 
-    // Close connection
+
     $conn->close();
 }
 
-// Create database and table if they don't exist
+
 createDatabaseAndTable("localhost", "root", "", "YourDBName", "users");
 
-// If user is already logged in, redirect to account page
+
 if (isset($_SESSION['user_id'])) {
     header("Location: Account.php");
     exit;
 }
 
-// Include necessary files
+
 require_once('php/MySQL.php');
 
-// Database connection
+
 $database = new MySQL("YourDBName", "YourTableName");
 
-// Registration functionality
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if all fields are provided
+
     if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        // Check if email is already registered
+
         $query = "SELECT * FROM users WHERE email = '$email'";
         $result = $database->executeQuery($query);
         if ($result && mysqli_num_rows($result) > 0) {
             $error = "Email is already registered.";
         } else {
-            // Insert new user into database
+
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             $insert_query = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
             if ($database->executeQuery($insert_query)) {
-                // Redirect to login page
+
                 header("Location: login.php");
                 exit;
             } else {

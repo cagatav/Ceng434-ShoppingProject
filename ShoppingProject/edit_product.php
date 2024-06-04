@@ -1,18 +1,14 @@
 <?php
-// MySQL.php dosyasını dahil edin
+
 require_once('php/MySQL.php');
 
-// Veritabanı bağlantısını oluşturun
 $database = new MySQL();
 
-// Ürünün ID'sini alın
 if(isset($_GET['id']) && !empty($_GET['id'])) {
     $product_id = $_GET['id'];
     
-    // Veritabanından ürünü alın
     $product = $database->getProductById($product_id);
     
-    // Eğer ürün bulunamadıysa hata mesajı gösterin
     if(!$product) {
         echo "Product not found.";
         exit;
@@ -22,19 +18,15 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
     exit;
 }
 
-// Eğer form gönderildiyse, güncelleme işlemini gerçekleştirin
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Formdan gelen verileri alın
     $product_name = $_POST['product_name'];
     $product_description = $_POST['product_description'];
     $product_price = $_POST['product_price'];
     $product_seller = $_POST['product_seller'];
     $product_type = $_POST['product_type'];
     
-    // Veritabanında güncelleme yapın
     $database->updateProduct($product_id, $product_name, $product_description, $product_price, $product_seller, $product_type);
     
-    // Kullanıcıyı ürün listesi sayfasına yönlendirin
     header("Location: AdminShop.php");
     exit;
 }

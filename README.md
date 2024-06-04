@@ -14,9 +14,3 @@ This project was created using HTML, CSS, PHP, and MySQL.
 
 3. To view the project, open your web browser and go to "http://localhost/Ceng434-ShoppingProject/ShoppingProject/Home.php".
 
-## Updating Data
-
-To update the data in the project, you can go to "http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=productdb&table=producttable".
-
-Add the SQL codes at the bottom to the "producttable" table as SQL.
-

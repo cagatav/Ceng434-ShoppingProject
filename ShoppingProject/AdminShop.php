@@ -1,17 +1,17 @@
 <?php
-// MySQL.php dosyasını dahil edin
+
 require_once('php/MySQL.php');
 
-// Veritabanı bağlantısını oluşturun
+
 $database = new MySQL();
 
-// Ürünleri veritabanından alın
+
 $products = $database->getData();
 
 if (isset($_POST['logout'])) {
-    // Oturumu sonlandır
+
     session_destroy();
-    // Kullanıcıyı login sayfasına yönlendir
+
     header("Location: login.php");
     exit;
 }
@@ -47,10 +47,10 @@ if (isset($_POST['logout'])) {
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 5; /* Adjust the number of lines shown */
+            -webkit-line-clamp: 5;
             -webkit-box-orient: vertical;
             white-space: normal;
-            width: 350px; /* Adjust the width */
+            width: 350px; 
         }
         .edit-button {
             background-color: #007bff;

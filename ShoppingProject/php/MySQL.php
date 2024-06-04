@@ -8,7 +8,6 @@ class MySQL
     public $tablename;
     public $con;
 
-    // class constructor
     public function __construct(
         $dbname = "productdb",
         $tablename = "producttable",
@@ -23,23 +22,18 @@ class MySQL
         $this->username = $username;
         $this->password = $password;
 
-        // create connection
         $this->con = mysqli_connect($servername, $username, $password);
 
-        // Check connection
         if (!$this->con){
             die("Connection failed : " . mysqli_connect_error());
         }
 
-        // create database if not exists
         $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 
-        // execute query
         if(mysqli_query($this->con, $sql)){
 
             $this->con = mysqli_connect($servername, $username, $password, $dbname);
 
-            // sql to create new table
             $sql = "CREATE TABLE IF NOT EXISTS $tablename
                     (product_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                     product_name TEXT NOT NULL,
@@ -73,12 +67,10 @@ class MySQL
         }
     }
 
-    // Method to execute SQL queries
     public function executeQuery($sql) {
         return $this->con->query($sql);
     }
 
-    // get product from the database
     public function getData($sql = null) {
         if ($sql === null) {
             $sql = "SELECT product_id, product_name, product_description, product_price, product_image, product_seller, product_type FROM $this->tablename";
@@ -145,7 +137,6 @@ class MySQL
             'product_sellers' => $product_sellers
         );
     }
-            // MySQL.php dosyasında
         public function getOrders() {
             $sql = "SELECT * FROM productdb.orderhistory";
             $result = $this->con->query($sql);

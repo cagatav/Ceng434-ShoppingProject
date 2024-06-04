@@ -1,17 +1,17 @@
 <?php
-// MySQL.php dosyasını dahil edin
+
 require_once('php/MySQL.php');
 
-// Veritabanı bağlantısını oluşturun
+
 $database = new MySQL();
 
-// Siparişleri veritabanından alın
+
 $orders = $database->getOrders();
 
 if (isset($_POST['logout'])) {
-    // Oturumu sonlandır
+
     session_destroy();
-    // Kullanıcıyı login sayfasına yönlendir
+
     header("Location: login.php");
     exit;
 }
@@ -25,7 +25,7 @@ if (isset($_POST['logout'])) {
     <title>Orders</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-        /* Navbar CSS */
+
         .navbar-brand {
             font-size: 24px;
         }

@@ -1,35 +1,35 @@
 <?php
-// Oturumu başlat
+
 session_start();
 
-// MySQL.php dosyasını dahil edin
+
 require_once('php/MySQL.php');
 
-// Veritabanı bağlantısını oluşturun
+
 $database = new MySQL();
 
-// Çıkış işlemi
+
 if (isset($_POST['logout'])) {
-    // Oturumu sonlandır
+
     session_destroy();
-    // Kullanıcıyı login sayfasına yönlendir
+
     header("Location: login.php");
     exit;
 }
 
-// Ürün ekleme formu gönderildiğinde
+
 if (isset($_POST['add_product'])) {
-    // Form verilerini alın
+
     $product_name = $_POST['product_name'];
     $product_description = $_POST['product_description'];
     $product_price = $_POST['product_price'];
-    $product_image = $_FILES['product_image']['name']; // Dosya adını al
-    $product_image_tmp = $_FILES['product_image']['tmp_name']; // Geçici dosya yolunu al
-    move_uploaded_file($product_image_tmp, "upload/$product_image"); // Dosyayı belirtilen klasöre taşı
+    $product_image = $_FILES['product_image']['name']; 
+    $product_image_tmp = $_FILES['product_image']['tmp_name'];
+    move_uploaded_file($product_image_tmp, "upload/$product_image"); 
     $product_seller = $_POST['product_seller'];
     $product_type = $_POST['product_type'];
 
-    // Ürünü veritabanına ekleyin
+
     $success = $database->addToProductTable($product_name, $product_description, $product_price, $product_image, $product_seller, $product_type);
     if ($success) {
         $success_message = "Product added successfully!";
@@ -38,11 +38,9 @@ if (isset($_POST['add_product'])) {
     }
 }
 
-// Ürün silme isteği gönderildiğinde
 if (isset($_POST['delete_product'])) {
     $product_id = $_POST['product_id'];
 
-    // Ürünü veritabanından sil
     $success = $database->deleteProduct($product_id);
     if ($success) {
         $success_message = "Product deleted successfully!";
@@ -90,7 +88,7 @@ if (isset($_POST['delete_product'])) {
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
         <a href="Home.php" class="navbar-brand animation">
@@ -120,7 +118,7 @@ if (isset($_POST['delete_product'])) {
         </div>
     </nav>
 
-    <!-- Admin Panel Content -->
+
     <div class="container mt-5">
         <h2 class="text-center mb-4">Admin Panel</h2>
 
@@ -166,7 +164,7 @@ if (isset($_POST['delete_product'])) {
         </form>
     </div>
 
-    <!-- Bootstrap JS -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-T/B5HSZczm9XVRwO8Fqx3bSjXALN0vO2PvzFcGU6scqKdAHR8HyjR1pxsgp/qlR" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-Ms/ET6joNDQ9tuHF2m49D/xm6j5SkE/Iw+nBhRZjGXdiXoPkOS+1FszdL4/8x0z+o" crossorigin="anonymous"></script>

@@ -43,27 +43,27 @@ if(isset($_GET['product_id'])) {
         order: 2;
         margin: auto;
         display: flex;
-        flex-direction: column; /* Elements inside details are stacked vertically */
+        flex-direction: column; 
         }
 
         .price-cart-container {
             display: flex;
-            justify-content: space-between; /* Aligns children (price and button) on opposite ends */
+            justify-content: space-between; 
             align-items: center;
         }
 
         .add-to-cart-button {
-            width: auto; /* Only as wide as needed */
-            margin-left: auto; /* Pushes the button to the right */
+            width: auto; 
+            margin-left: auto; 
             display: flex;
-            align-items: center; /* Vertically center content inside the button */
+            align-items: center; 
         }
 
         .image {
             max-width: 80%;
             height: auto;
             margin: auto;
-            order: 1; /* Görsel sol tarafa */
+            order: 1; 
             align-items: center;
 
         }

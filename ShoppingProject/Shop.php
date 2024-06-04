@@ -97,7 +97,7 @@ if (isset($_POST['add'])){
                         <option>All</option>
                         <option>Notebook</option>
                         <option>Monitor</option>
-                        <!-- <option> seçenekleri arttır </option> -->
+
                     </select>
                 </div>
                 <div class="form-group">

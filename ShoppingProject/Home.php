@@ -24,10 +24,10 @@ if (isset($_POST['add'])){
         $item_array = array(
             'product_id' => $_POST['product_id']
         );
-        // Create new session variable
+
         $_SESSION['cart'][0] = $item_array;
     }
-    // Redirect to the same page to display the toast
+
     header("Location: " . $_SERVER['PHP_SELF']);
     exit();
 }
@@ -74,7 +74,7 @@ if (isset($_POST['add'])){
             <li data-target="#kayarbanner" data-slide-to="1"></li>
             <li data-target="#kayarbanner" data-slide-to="2"></li>
             <li data-target="#kayarbanner" data-slide-to="3"></li>
-            <!-- EKLEDİĞİN BANNER SAYISI KADAR KOD EKLE VE 2-3-4 DİYE İNDEXLEME DEVAM ET -->
+
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -89,7 +89,7 @@ if (isset($_POST['add'])){
             <div class="carousel-item">
                 <img src="upload/banner-team.png" class="d-block mx-auto" style="width: auto; height: 550px;" alt="banner4">
             </div>
-            <!-- BANNER RESİMLERİNİ BURAYA EKLEYEBİLİRSİN -->
+
         </div>
         <a class="carousel-control-prev" href="#kayarbanner" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
