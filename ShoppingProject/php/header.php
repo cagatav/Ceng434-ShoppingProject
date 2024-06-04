@@ -49,6 +49,8 @@ session_start();
     </nav>
 </header>
 
+<div id="toastContainer"></div>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
