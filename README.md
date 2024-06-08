@@ -14,3 +14,4 @@ This project was created using HTML, CSS, PHP, and MySQL.
 
 3. To view the project, open your web browser and go to "http://localhost/Ceng434-ShoppingProject/ShoppingProject/Home.php".
 
+4. You can reach SQL Database from .sql.md file.
