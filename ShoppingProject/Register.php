@@ -1,25 +1,18 @@
 <?php
 session_start();
 
-
 function createDatabaseAndTable($host, $username, $password, $dbName, $tableName) {
-
     $conn = new mysqli($host, $username, $password);
-
-
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
 
     $sqlCreateDB = "CREATE DATABASE IF NOT EXISTS $dbName";
     if ($conn->query($sqlCreateDB) === FALSE) {
         echo "Error creating database: " . $conn->error;
     }
 
-
     $conn->select_db($dbName);
-
 
     $sqlCreateTable = "CREATE TABLE IF NOT EXISTS $tableName (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -31,44 +24,34 @@ function createDatabaseAndTable($host, $username, $password, $dbName, $tableName
         echo "Error creating table: " . $conn->error;
     }
 
-
     $conn->close();
 }
 
-
 createDatabaseAndTable("localhost", "root", "", "YourDBName", "users");
-
 
 if (isset($_SESSION['user_id'])) {
     header("Location: Account.php");
     exit;
 }
 
-
 require_once('php/MySQL.php');
-
 
 $database = new MySQL("YourDBName", "YourTableName");
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-
 
         $query = "SELECT * FROM users WHERE email = '$email'";
         $result = $database->executeQuery($query);
         if ($result && mysqli_num_rows($result) > 0) {
             $error = "Email is already registered.";
         } else {
-
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             $insert_query = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
             if ($database->executeQuery($insert_query)) {
-
                 header("Location: login.php");
                 exit;
             } else {
@@ -89,7 +72,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .form-group.position-relative {
+            display: block;
+            position: relative;
+        }
+        .password-toggle {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(60%);
+        }
+        .password-input {
+            padding-right: 30px; /* Ensure there's space for the icon */
+        }
+    </style>
 </head>
 <body>
 <?php require_once("php/header.php"); ?>
@@ -107,9 +106,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group position-relative">
                         <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <input type="password" class="form-control password-input" id="password" name="password" required>
+                        <span class="fas fa-eye password-toggle" id="togglePassword"></span>
                     </div>
                     <button type="submit" class="btn btn-info btn-block">Register</button>
                 </form>
@@ -117,5 +117,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
 </body>
 </html>
