@@ -21,9 +21,9 @@ if (isset($_POST['add'])){
     if(isset($_SESSION['cart'])){
         $item_array_id = array_column($_SESSION['cart'], "product_id");
         if(in_array($_POST['product_id'], $item_array_id)){
-            print_r('Product is already added in the cart!');
+            $_SESSION['toast_message'] = 'Product is already added in the cart!';
         }else{
-            print_r('Product is added in the cart!');
+            $_SESSION['toast_message'] = 'Product is added in the cart!';
             $count = count($_SESSION['cart']);
             $item_array = array(
                 'product_id' => $_POST['product_id']
@@ -31,14 +31,15 @@ if (isset($_POST['add'])){
             $_SESSION['cart'][$count] = $item_array;
         }
     }else{
+        $_SESSION['toast_message'] = 'Product is added in the cart!';
         $item_array = array(
                 'product_id' => $_POST['product_id']
         );
         $_SESSION['cart'][0] = $item_array;
-        print_r($_SESSION['cart']);
     }
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -72,6 +73,26 @@ if (isset($_POST['add'])){
                 var sort = $('#sort').val();
                 fetchProducts(filter, sort);
             });
+
+            var toastMessage = <?php echo json_encode($_SESSION['toast_message'] ?? ''); ?>;
+            if (toastMessage) {
+                var toastHTML = `
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                    <div class="toast-header">
+                        <strong class="mr-auto">Notification</strong>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="toast-body">
+                        ${toastMessage}
+                    </div>
+                </div>`;
+                var toastContainer = document.getElementById('toastContainer');
+                toastContainer.innerHTML = toastHTML;
+                $('.toast').toast('show');
+                <?php unset($_SESSION['toast_message']); ?>
+            }
         });
     </script>
     <style>
@@ -83,21 +104,29 @@ if (isset($_POST['add'])){
         a:hover {
             transform: scale(1.03);
         }
+        #toastContainer {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <?php require_once("php/header.php"); ?>
     <div class="container mt-5">
+        <div id="toastContainer"></div>
         <div class="row">
             <div class="col-md-3">
-            <br><br><br><h4>Filters</h4><br>
+                <h4>Filters</h4>
                 <div class="form-group">
                     <label for="productType">Product Type</label>
                     <select class="form-control" id="productType">
                         <option>All</option>
                         <option>Notebook</option>
                         <option>Monitor</option>
-
                     </select>
                 </div>
                 <div class="form-group">

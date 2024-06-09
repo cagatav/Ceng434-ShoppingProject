@@ -57,6 +57,7 @@ if (isset($_POST['add'])){
             z-index: 9999;
             margin-top: 10px;
         }
+        
     </style>
 </head>
 <body>
@@ -78,16 +79,16 @@ if (isset($_POST['add'])){
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="upload/banner-welcome.png" class="d-block mx-auto" style="width: auto; height: 550px;" alt="banner1">
+                <img src="upload/banner-welcome.png" class="d-block mx-auto" style="w-75" alt="banner1">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner-shopnow.png" class="d-block mx-auto" style="width: auto; height: 550px;" alt="banner2">
+                <img src="upload/banner-shopnow.png" class="d-block mx-auto" style="w-75" alt="banner2">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner-livechatai.png" class="d-block mx-auto" style="width: auto; height: 550px;" alt="banner3">
+                <img src="upload/banner-livechatai.png" class="d-block mx-auto" style="w-75" alt="banner3">
             </div>
             <div class="carousel-item">
-                <img src="upload/banner-team.png" class="d-block mx-auto" style="width: auto; height: 550px;" alt="banner4">
+                <img src="upload/banner-team.png" class="d-block mx-auto" style="w-75" alt="banner4">
             </div>
 
         </div>

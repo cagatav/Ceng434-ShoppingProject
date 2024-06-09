@@ -1,18 +1,15 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
 
-
 require_once('php/MySQL.php');
 require_once('./php/component.php');
 
 $db = new MySQL("Productdb", "Producttable");
-
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +21,22 @@ $db = new MySQL("Productdb", "Producttable");
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        #toastContainer {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <?php require_once("php/header.php"); ?>
+
+    <div id="toastContainer"></div> <!-- Ensure toastContainer is present -->
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
@@ -75,5 +85,32 @@ $db = new MySQL("Productdb", "Producttable");
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha384-IhTC6+CnKp/wK2RR21iCKuJx1dCnKrAKFozSTaNstzL/4e9akJzvcTXlqDXnJvVj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            var toastMessage = <?php echo json_encode($_SESSION['toast_message'] ?? ''); ?>;
+            if (toastMessage) {
+                var toastHTML = `
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                    <div class="toast-header">
+                        <strong class="mr-auto">Notification</strong>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="toast-body">
+                        ${toastMessage}
+                    </div>
+                </div>`;
+                var toastContainer = document.getElementById('toastContainer');
+                toastContainer.innerHTML = toastHTML;
+                $('.toast').toast('show');
+                <?php unset($_SESSION['toast_message']); ?>
+            }
+        });
+    </script>
 </body>
 </html>
