@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
+    <?php require_once ("php/header.php"); ?>
+
 </head>
 <body>
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h2 class="my-4">Shipping Information</h2>
+            <h3 class="my-4 text-dark">Shipping Information</h3>
             <form action="place_order.php" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -22,18 +23,27 @@
                             <option value="">Select Country</option>
                             <option value="TR">Türkiye</option>
                             <option value="USA">United States Of America</option>
+                            <option value="CA">Canada</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="DE">Germany</option>
+                            <option value="FR">France</option>
+                            <option value="JP">Japan</option>
+                            <option value="CN">China</option>
+                            <option value="IN">India</option>
+                            <option value="BR">Brazil</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="city">City</label>
                         <select class="form-control" id="city" name="city" required>
+                            <option value="">Select City</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="postalCode">Postal Code</label>
-                        <input type="text" class="form-control" id="postalCode" name="postalCode" required>
+                        <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="phone">Phone Number</label>
@@ -41,16 +51,16 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="phoneCode">+1</span>
                             </div>
-                            <input type="text" class="form-control" id="phone" name="phone" required>
+                            <input type="text" class="form-control" id="phone" name="phone" required pattern="\d{10}" maxlength="10" min="0" placeholder="Phone Number">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                    <textarea class="form-control" id="address" name="address" rows="3" required placeholder="Address"></textarea>
                 </div>
 
-                <h2 class="my-4">Payment Method</h2>
+                <h4 class="my-4">Payment Method</h4>
                 <div class="form-group">
                     <label for="paymentMethod">Select Payment Method</label>
                     <select class="form-control" id="paymentMethod" name="paymentMethod" required>
@@ -65,17 +75,17 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="cardNumber">Card Number</label>
-                            <input type="text" class="form-control" id="cardNumber" name="cardNumber">
+                            <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="Card Number">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="expiryDate">Expiry Date</label>
-                            <input type="text" class="form-control" id="expiryDate" name="expiryDate">
+                            <input type="text" class="form-control" id="expiryDate" name="expiryDate" placeholder="Expiry Date">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="cvv">CVV</label>
-                            <input type="text" class="form-control" id="cvv" name="cvv">
+                            <input type="text" class="form-control" id="cvv" name="cvv" placeholder="CVV">
                         </div>
                     </div>
                 </div>
@@ -84,7 +94,7 @@
                 <div id="giftCardFields" style="display: none;">
                     <div class="form-group">
                         <label for="giftCardCode">Gift Card Code</label>
-                        <input type="text" class="form-control" id="giftCardCode" name="giftCardCode">
+                        <input type="text" class="form-control" id="giftCardCode" name="giftCardCode" placeholder="Gift Card Code">
                     </div>
                 </div>
 
@@ -108,27 +118,95 @@
 
     const countryData = {
         "TR": {
-            "cities": ["Ankara", "İstanbul"],
+            "cities": {
+                "Ankara": "06000",
+                "İstanbul": "34000"
+            },
             "phoneCode": "+90"
         },
         "USA": {
-            "cities": ["New York", "Los Angeles"],
+            "cities": {
+                "New York": "10001",
+                "Los Angeles": "90001"
+            },
             "phoneCode": "+1"
+        },
+        "CA": {
+            "cities": {
+                "Toronto": "M5H",
+                "Vancouver": "V5K"
+            },
+            "phoneCode": "+1"
+        },
+        "GB": {
+            "cities": {
+                "London": "EC1A",
+                "Manchester": "M1"
+            },
+            "phoneCode": "+44"
+        },
+        "DE": {
+            "cities": {
+                "Berlin": "10115",
+                "Munich": "80331"
+            },
+            "phoneCode": "+49"
+        },
+        "FR": {
+            "cities": {
+                "Paris": "75000",
+                "Lyon": "69000"
+            },
+            "phoneCode": "+33"
+        },
+        "JP": {
+            "cities": {
+                "Tokyo": "100-0001",
+                "Osaka": "530-0001"
+            },
+            "phoneCode": "+81"
+        },
+        "CN": {
+            "cities": {
+                "Beijing": "100000",
+                "Shanghai": "200000"
+            },
+            "phoneCode": "+86"
+        },
+        "IN": {
+            "cities": {
+                "Delhi": "110001",
+                "Mumbai": "400001"
+            },
+            "phoneCode": "+91"
+        },
+        "BR": {
+            "cities": {
+                "São Paulo": "01000-000",
+                "Rio de Janeiro": "20000-000"
+            },
+            "phoneCode": "+55"
         }
-
     };
-
 
     $('#country').change(function () {
         const country = $(this).val();
         const data = countryData[country];
         $('#phoneCode').text(data.phoneCode); 
         $('#city').empty(); 
-        $.each(data.cities, function(index, city) {
+        $('#city').append('<option value="">Select City</option>');
+        $.each(data.cities, function(city, postalCode) {
             $('#city').append('<option value="' + city + '">' + city + '</option>');
         });
+        $('#postalCode').val('');
     });
 
+    $('#city').change(function () {
+        const country = $('#country').val();
+        const city = $(this).val();
+        const postalCode = countryData[country].cities[city];
+        $('#postalCode').val(postalCode);
+    });
 
     $('#paymentMethod').change(function () {
         const method = $(this).val();
@@ -144,15 +222,23 @@
         }
     });
 
-
     $(document).ready(function() {
         const country = $('#country').val();
-        const data = countryData[country];
-        $('#phoneCode').text(data.phoneCode); 
-        $.each(data.cities, function(index, city) {
-            $('#city').append('<option value="' + city + '">' + city + '</option>');
-        });
+        if (country) {
+            const data = countryData[country];
+            $('#phoneCode').text(data.phoneCode); 
+            $('#city').empty(); 
+            $('#city').append('<option value="">Select City</option>');
+            $.each(data.cities, function(city, postalCode) {
+                $('#city').append('<option value="' + city + '">' + city + '</option>');
+            });
+        }
     });
+
+    $('#phone').on('input', function () {
+        this.value = this.value.replace(/\D/g, '').substring(0, 10);
+    });
+
 </script>
 </body>
 </html>
